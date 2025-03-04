@@ -18,6 +18,6 @@ namespace warehousesystem
 
         }
 
-        
+        //Commit2 lang ni ha siguru
     }
 }
