@@ -19,6 +19,6 @@ namespace warehousesystem
         }
         //I love Jos Inato <33
 
-        
+        //Commit2 lang ni ha siguru
     }
 }
