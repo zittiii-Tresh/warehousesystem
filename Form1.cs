@@ -17,6 +17,7 @@ namespace warehousesystem
             InitializeComponent();
 
         }
+        //I love Jos Inato <33
 
         
     }
