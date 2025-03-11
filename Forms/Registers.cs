@@ -13,9 +13,9 @@ namespace warehousesystem.Forms
 {
     public partial class Register : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public Register()
-        {
-            InitializeComponent();
-        }
+        //public Register()
+        //{
+        //    InitializeComponent();
+        //}
     }
 }
