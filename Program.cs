@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using warehousesystem.Forms;
 
 namespace warehousesystem
 {
@@ -17,7 +18,7 @@ namespace warehousesystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

@@ -5,20 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraBars;
 
-namespace warehousesystem
+namespace warehousesystem.Forms
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Login : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        
-        public Form1()
+        public Login()
         {
             InitializeComponent();
-
         }
-        //I love Jos Inato <33
-
-        //Commit2 lang ni ha siguru
     }
 }

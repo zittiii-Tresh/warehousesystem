@@ -1,6 +1,6 @@
-﻿namespace warehousesystem
+﻿namespace warehousesystem.Forms
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.loginSP = new DevExpress.XtraEditors.SidePanel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
@@ -43,59 +40,33 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.loginSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton1
+            // simpleButton3
             // 
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(1238, 14);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(35, 19);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "simpleButton1";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(406, 116);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(249, 81);
-            this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "Inventory";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(670, 116);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(189, 81);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "System";
-            // 
-            // sidePanel1
-            // 
-            this.sidePanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.sidePanel1.Appearance.Options.UseBackColor = true;
-            this.sidePanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sidePanel1.BackgroundImage")));
-            this.sidePanel1.Location = new System.Drawing.Point(265, 101);
-            this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(126, 116);
-            this.sidePanel1.TabIndex = 3;
-            this.sidePanel1.Text = "sidePanel1";
+            this.simpleButton3.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton3.Appearance.Options.UseBorderColor = true;
+            this.simpleButton3.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton3.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton3.AppearanceHovered.Options.UseBackColor = true;
+            this.simpleButton3.AppearanceHovered.Options.UseBorderColor = true;
+            this.simpleButton3.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
+            this.simpleButton3.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButton3.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton3.AppearancePressed.Options.UseBorderColor = true;
+            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
+            this.simpleButton3.Location = new System.Drawing.Point(2, 729);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.simpleButton3.Size = new System.Drawing.Size(50, 45);
+            this.simpleButton3.TabIndex = 19;
+            this.simpleButton3.Text = "simpleButton3";
             // 
             // loginSP
             // 
@@ -112,10 +83,10 @@
             this.loginSP.Controls.Add(this.labelControl5);
             this.loginSP.Controls.Add(this.labelControl4);
             this.loginSP.Controls.Add(this.labelControl3);
-            this.loginSP.Location = new System.Drawing.Point(345, 257);
+            this.loginSP.Location = new System.Drawing.Point(352, 261);
             this.loginSP.Name = "loginSP";
             this.loginSP.Size = new System.Drawing.Size(434, 410);
-            this.loginSP.TabIndex = 4;
+            this.loginSP.TabIndex = 23;
             this.loginSP.Text = "sidePanel2";
             // 
             // simpleButton2
@@ -236,87 +207,56 @@
             this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "LOGIN";
             // 
-            // simpleButton3
+            // sidePanel1
             // 
-            this.simpleButton3.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.Appearance.Options.UseBorderColor = true;
-            this.simpleButton3.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearanceHovered.Options.UseBackColor = true;
-            this.simpleButton3.AppearanceHovered.Options.UseBorderColor = true;
-            this.simpleButton3.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearancePressed.Options.UseBackColor = true;
-            this.simpleButton3.AppearancePressed.Options.UseBorderColor = true;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(4, 728);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(50, 45);
-            this.simpleButton3.TabIndex = 5;
-            this.simpleButton3.Text = "simpleButton3";
+            this.sidePanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.sidePanel1.Appearance.Options.UseBackColor = true;
+            this.sidePanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sidePanel1.BackgroundImage")));
+            this.sidePanel1.Location = new System.Drawing.Point(272, 105);
+            this.sidePanel1.Name = "sidePanel1";
+            this.sidePanel1.Size = new System.Drawing.Size(126, 116);
+            this.sidePanel1.TabIndex = 22;
+            this.sidePanel1.Text = "sidePanel1";
             // 
-            // labelControl8
+            // labelControl2
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Appearance.Options.UseForeColor = true;
-            this.labelControl8.Location = new System.Drawing.Point(880, 116);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(189, 81);
-            this.labelControl8.TabIndex = 6;
-            this.labelControl8.Text = "System";
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(677, 120);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(189, 81);
+            this.labelControl2.TabIndex = 21;
+            this.labelControl2.Text = "System";
             // 
-            // labelControl9
+            // labelControl1
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Appearance.Options.UseForeColor = true;
-            this.labelControl9.Location = new System.Drawing.Point(854, 216);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(189, 81);
-            this.labelControl9.TabIndex = 7;
-            this.labelControl9.Text = "System";
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(413, 120);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(249, 81);
+            this.labelControl1.TabIndex = 20;
+            this.labelControl1.Text = "Inventory";
             // 
-            // labelControl10
+            // Login
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Yu Gothic UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(53, 270);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(249, 81);
-            this.labelControl10.TabIndex = 8;
-            this.labelControl10.Text = "Inventory";
-            // 
-            // Form1
-            // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
-            this.Appearance.BackColor = System.Drawing.Color.Cornsilk;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 776);
-            this.Controls.Add(this.labelControl10);
-            this.Controls.Add(this.labelControl9);
-            this.Controls.Add(this.labelControl8);
-            this.Controls.Add(this.simpleButton3);
             this.Controls.Add(this.loginSP);
             this.Controls.Add(this.sidePanel1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.simpleButton1);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.False;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Controls.Add(this.simpleButton3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Login";
             this.RibbonVisibility = DevExpress.XtraBars.Ribbon.RibbonVisibility.Hidden;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Login";
             this.loginSP.ResumeLayout(false);
             this.loginSP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
@@ -328,24 +268,19 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SidePanel sidePanel1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SidePanel loginSP;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.SidePanel sidePanel1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }
-
