@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
-using warehousesystem.Models;
 
 namespace warehousesystem.Forms
 {
     public partial class Register : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+<<<<<<< HEAD
+        //public Register()
+        //{
+        //    InitializeComponent();
+        //}
+=======
         public Register()
         {
             InitializeComponent();
@@ -23,21 +28,6 @@ namespace warehousesystem.Forms
         {
 
         }
-
-        private void simpleButtonSignUp_Click(object sender, EventArgs e)
-        {
-            AdminRegister adminRegister = new AdminRegister();
-            adminRegister.EmployeeID = textEditEmployeeID.Text;
-            adminRegister.Username = textEditUsername.Text;
-            adminRegister.Password = textEditPassword.Text;
-
-           // RegisterAdmin(adminRegister);
-
-        }
-
-        private void RegisterAdmin()
-        {
-
-        }
+>>>>>>> origin/masterTreshia
     }
 }
