@@ -32,9 +32,6 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.loginSP = new DevExpress.XtraEditors.SidePanel();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -43,6 +40,9 @@
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.registerHLB = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.loginSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
@@ -75,7 +75,7 @@
             this.loginSP.Appearance.Options.UseBorderColor = true;
             this.loginSP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginSP.BackgroundImage")));
             this.loginSP.Controls.Add(this.simpleButton2);
-            this.loginSP.Controls.Add(this.hyperlinkLabelControl1);
+            this.loginSP.Controls.Add(this.registerHLB);
             this.loginSP.Controls.Add(this.labelControl7);
             this.loginSP.Controls.Add(this.labelControl6);
             this.loginSP.Controls.Add(this.textEdit2);
@@ -109,48 +109,6 @@
             this.simpleButton2.Size = new System.Drawing.Size(262, 38);
             this.simpleButton2.TabIndex = 8;
             this.simpleButton2.Text = "Log In";
-            // 
-            // hyperlinkLabelControl1
-            // 
-            this.hyperlinkLabelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hyperlinkLabelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.hyperlinkLabelControl1.Appearance.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.hyperlinkLabelControl1.Appearance.Options.UseFont = true;
-            this.hyperlinkLabelControl1.Appearance.Options.UseForeColor = true;
-            this.hyperlinkLabelControl1.Appearance.Options.UseLinkColor = true;
-            this.hyperlinkLabelControl1.AppearanceDisabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.hyperlinkLabelControl1.AppearanceDisabled.Options.UseForeColor = true;
-            this.hyperlinkLabelControl1.AppearancePressed.ForeColor = System.Drawing.Color.Green;
-            this.hyperlinkLabelControl1.AppearancePressed.Options.UseForeColor = true;
-            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(244, 266);
-            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
-            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(50, 17);
-            this.hyperlinkLabelControl1.TabIndex = 7;
-            this.hyperlinkLabelControl1.Text = "Register";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(299, 266);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(28, 17);
-            this.labelControl7.TabIndex = 6;
-            this.labelControl7.Text = "Here";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(102, 266);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(136, 17);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Don\'t have an Account?";
             // 
             // textEdit2
             // 
@@ -242,6 +200,49 @@
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "Inventory";
             // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Location = new System.Drawing.Point(283, 266);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(69, 17);
+            this.labelControl7.TabIndex = 6;
+            this.labelControl7.Text = "Admin Here";
+            // 
+            // registerHLB
+            // 
+            this.registerHLB.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerHLB.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.registerHLB.Appearance.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.registerHLB.Appearance.Options.UseFont = true;
+            this.registerHLB.Appearance.Options.UseForeColor = true;
+            this.registerHLB.Appearance.Options.UseLinkColor = true;
+            this.registerHLB.AppearanceDisabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.registerHLB.AppearanceDisabled.Options.UseForeColor = true;
+            this.registerHLB.AppearancePressed.ForeColor = System.Drawing.Color.Green;
+            this.registerHLB.AppearancePressed.Options.UseForeColor = true;
+            this.registerHLB.Location = new System.Drawing.Point(228, 266);
+            this.registerHLB.Name = "registerHLB";
+            this.registerHLB.Size = new System.Drawing.Size(50, 17);
+            this.registerHLB.TabIndex = 7;
+            this.registerHLB.Text = "Register";
+            this.registerHLB.Click += new System.EventHandler(this.registerHLB_Click);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(86, 266);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(136, 17);
+            this.labelControl6.TabIndex = 5;
+            this.labelControl6.Text = "Don\'t have an Account?";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -271,9 +272,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SidePanel loginSP;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -282,5 +280,8 @@
         private DevExpress.XtraEditors.SidePanel sidePanel1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl registerHLB;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

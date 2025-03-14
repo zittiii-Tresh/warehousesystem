@@ -17,5 +17,10 @@ namespace warehousesystem.Forms
         {
             InitializeComponent();
         }
+
+        private void registerHLB_Click(object sender, EventArgs e)
+        {
+            Forms.Register = 
+        }
     }
 }
