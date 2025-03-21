@@ -29,44 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.loginSP = new DevExpress.XtraEditors.SidePanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButtonLogIn = new DevExpress.XtraEditors.SimpleButton();
+            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
+            this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.registerHLB = new DevExpress.XtraEditors.HyperlinkLabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.loginSP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton3
+            // btnExit
             // 
-            this.simpleButton3.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.Appearance.Options.UseBorderColor = true;
-            this.simpleButton3.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearanceHovered.Options.UseBackColor = true;
-            this.simpleButton3.AppearanceHovered.Options.UseBorderColor = true;
-            this.simpleButton3.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton3.AppearancePressed.Options.UseBackColor = true;
-            this.simpleButton3.AppearancePressed.Options.UseBorderColor = true;
-            this.simpleButton3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton3.ImageOptions.SvgImage")));
-            this.simpleButton3.Location = new System.Drawing.Point(2, 729);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton3.Size = new System.Drawing.Size(50, 45);
-            this.simpleButton3.TabIndex = 19;
-            this.simpleButton3.Text = "simpleButton3";
+            this.btnExit.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.Appearance.Options.UseBorderColor = true;
+            this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
+            this.btnExit.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.AppearancePressed.Options.UseBackColor = true;
+            this.btnExit.AppearancePressed.Options.UseBorderColor = true;
+            this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
+            this.btnExit.Location = new System.Drawing.Point(2, 729);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.btnExit.Size = new System.Drawing.Size(50, 45);
+            this.btnExit.TabIndex = 19;
+            this.btnExit.Text = "simpleButton3";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // loginSP
             // 
@@ -74,12 +72,9 @@
             this.loginSP.Appearance.Options.UseBackColor = true;
             this.loginSP.Appearance.Options.UseBorderColor = true;
             this.loginSP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginSP.BackgroundImage")));
-            this.loginSP.Controls.Add(this.simpleButton2);
-            this.loginSP.Controls.Add(this.registerHLB);
-            this.loginSP.Controls.Add(this.labelControl7);
-            this.loginSP.Controls.Add(this.labelControl6);
-            this.loginSP.Controls.Add(this.textEdit2);
-            this.loginSP.Controls.Add(this.textEdit1);
+            this.loginSP.Controls.Add(this.simpleButtonLogIn);
+            this.loginSP.Controls.Add(this.textEditPassword);
+            this.loginSP.Controls.Add(this.textEditUserName);
             this.loginSP.Controls.Add(this.labelControl5);
             this.loginSP.Controls.Add(this.labelControl4);
             this.loginSP.Controls.Add(this.labelControl3);
@@ -89,45 +84,46 @@
             this.loginSP.TabIndex = 23;
             this.loginSP.Text = "sidePanel2";
             // 
-            // simpleButton2
+            // simpleButtonLogIn
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Green;
-            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseBorderColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.AppearanceDisabled.BorderColor = System.Drawing.Color.Transparent;
-            this.simpleButton2.AppearanceDisabled.Options.UseBorderColor = true;
-            this.simpleButton2.Location = new System.Drawing.Point(87, 328);
-            this.simpleButton2.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
-            this.simpleButton2.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.simpleButton2.LookAndFeel.SkinName = "WXI";
-            this.simpleButton2.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton2.Size = new System.Drawing.Size(262, 38);
-            this.simpleButton2.TabIndex = 8;
-            this.simpleButton2.Text = "Log In";
+            this.simpleButtonLogIn.Appearance.BackColor = System.Drawing.Color.Green;
+            this.simpleButtonLogIn.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButtonLogIn.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButtonLogIn.Appearance.Options.UseBackColor = true;
+            this.simpleButtonLogIn.Appearance.Options.UseBorderColor = true;
+            this.simpleButtonLogIn.Appearance.Options.UseFont = true;
+            this.simpleButtonLogIn.AppearanceDisabled.BorderColor = System.Drawing.Color.Transparent;
+            this.simpleButtonLogIn.AppearanceDisabled.Options.UseBorderColor = true;
+            this.simpleButtonLogIn.Location = new System.Drawing.Point(85, 288);
+            this.simpleButtonLogIn.LookAndFeel.SkinMaskColor = System.Drawing.Color.Transparent;
+            this.simpleButtonLogIn.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.simpleButtonLogIn.LookAndFeel.SkinName = "WXI";
+            this.simpleButtonLogIn.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.simpleButtonLogIn.Name = "simpleButtonLogIn";
+            this.simpleButtonLogIn.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButtonLogIn.Size = new System.Drawing.Size(262, 38);
+            this.simpleButtonLogIn.TabIndex = 8;
+            this.simpleButtonLogIn.Text = "Log In";
+            this.simpleButtonLogIn.Click += new System.EventHandler(this.simpleButtonLogIn_Click);
             // 
-            // textEdit2
+            // textEditPassword
             // 
-            this.textEdit2.Location = new System.Drawing.Point(39, 219);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Size = new System.Drawing.Size(356, 34);
-            this.textEdit2.TabIndex = 4;
+            this.textEditPassword.Location = new System.Drawing.Point(39, 219);
+            this.textEditPassword.Name = "textEditPassword";
+            this.textEditPassword.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.textEditPassword.Properties.Appearance.Options.UseBackColor = true;
+            this.textEditPassword.Size = new System.Drawing.Size(356, 34);
+            this.textEditPassword.TabIndex = 4;
             // 
-            // textEdit1
+            // textEditUserName
             // 
-            this.textEdit1.Location = new System.Drawing.Point(37, 143);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textEdit1.Size = new System.Drawing.Size(358, 34);
-            this.textEdit1.TabIndex = 3;
+            this.textEditUserName.Location = new System.Drawing.Point(37, 143);
+            this.textEditUserName.Name = "textEditUserName";
+            this.textEditUserName.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.textEditUserName.Properties.Appearance.Options.UseBackColor = true;
+            this.textEditUserName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditUserName.Size = new System.Drawing.Size(358, 34);
+            this.textEditUserName.TabIndex = 3;
             // 
             // labelControl5
             // 
@@ -200,49 +196,6 @@
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "Inventory";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(283, 266);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(69, 17);
-            this.labelControl7.TabIndex = 6;
-            this.labelControl7.Text = "Admin Here";
-            // 
-            // registerHLB
-            // 
-            this.registerHLB.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerHLB.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.registerHLB.Appearance.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.registerHLB.Appearance.Options.UseFont = true;
-            this.registerHLB.Appearance.Options.UseForeColor = true;
-            this.registerHLB.Appearance.Options.UseLinkColor = true;
-            this.registerHLB.AppearanceDisabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.registerHLB.AppearanceDisabled.Options.UseForeColor = true;
-            this.registerHLB.AppearancePressed.ForeColor = System.Drawing.Color.Green;
-            this.registerHLB.AppearancePressed.Options.UseForeColor = true;
-            this.registerHLB.Location = new System.Drawing.Point(228, 266);
-            this.registerHLB.Name = "registerHLB";
-            this.registerHLB.Size = new System.Drawing.Size(50, 17);
-            this.registerHLB.TabIndex = 7;
-            this.registerHLB.Text = "Register";
-            this.registerHLB.Click += new System.EventHandler(this.registerHLB_Click);
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(86, 266);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(136, 17);
-            this.labelControl6.TabIndex = 5;
-            this.labelControl6.Text = "Don\'t have an Account?";
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -252,16 +205,17 @@
             this.Controls.Add(this.sidePanel1);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.btnExit);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
             this.RibbonVisibility = DevExpress.XtraBars.Ribbon.RibbonVisibility.Hidden;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.loginSP.ResumeLayout(false);
             this.loginSP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,19 +223,16 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SidePanel loginSP;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonLogIn;
+        private DevExpress.XtraEditors.TextEdit textEditPassword;
+        private DevExpress.XtraEditors.TextEdit textEditUserName;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SidePanel sidePanel1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.HyperlinkLabelControl registerHLB;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
