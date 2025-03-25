@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
+            this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -58,16 +61,13 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit2 = new DevExpress.XtraEditors.LookUpEdit();
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcProducts = new DevExpress.XtraGrid.GridControl();
+            this.gvProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
@@ -81,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.sidePanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -112,6 +112,45 @@
             this.sidePanel1.Size = new System.Drawing.Size(1442, 113);
             this.sidePanel1.TabIndex = 3;
             this.sidePanel1.Text = "sidePanel1";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.labelControl13.Location = new System.Drawing.Point(1342, 32);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
+            this.labelControl13.Size = new System.Drawing.Size(72, 47);
+            this.labelControl13.TabIndex = 4;
+            this.labelControl13.Text = "date";
+            // 
+            // sidePanel9
+            // 
+            this.sidePanel9.AllowResize = false;
+            this.sidePanel9.BorderThickness = 0;
+            this.sidePanel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sidePanel9.Location = new System.Drawing.Point(1414, 32);
+            this.sidePanel9.Name = "sidePanel9";
+            this.sidePanel9.Size = new System.Drawing.Size(28, 80);
+            this.sidePanel9.TabIndex = 3;
+            this.sidePanel9.Text = "sidePanel9";
+            // 
+            // sidePanel8
+            // 
+            this.sidePanel8.AllowResize = false;
+            this.sidePanel8.BorderThickness = 0;
+            this.sidePanel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidePanel8.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel8.Name = "sidePanel8";
+            this.sidePanel8.Size = new System.Drawing.Size(1442, 32);
+            this.sidePanel8.TabIndex = 2;
+            this.sidePanel8.Text = "sidePanel8";
             // 
             // sidePanel2
             // 
@@ -426,7 +465,7 @@
             // 
             // sidePanel3
             // 
-            this.sidePanel3.Controls.Add(this.gridControl1);
+            this.sidePanel3.Controls.Add(this.gcProducts);
             this.sidePanel3.Controls.Add(this.sidePanel7);
             this.sidePanel3.Controls.Add(this.sidePanel6);
             this.sidePanel3.Controls.Add(this.sidePanel5);
@@ -438,23 +477,23 @@
             this.sidePanel3.TabIndex = 31;
             this.sidePanel3.Text = "sidePanel3";
             // 
-            // gridControl1
+            // gcProducts
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(19, 51);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1043, 608);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gcProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcProducts.Location = new System.Drawing.Point(19, 51);
+            this.gcProducts.MainView = this.gvProducts;
+            this.gcProducts.Name = "gcProducts";
+            this.gcProducts.Size = new System.Drawing.Size(1043, 608);
+            this.gcProducts.TabIndex = 4;
+            this.gcProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvProducts});
             // 
-            // gridView1
+            // gvProducts
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gvProducts.GridControl = this.gcProducts;
+            this.gvProducts.Name = "gvProducts";
             // 
             // gridColumn1
             // 
@@ -511,45 +550,6 @@
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
             // 
-            // sidePanel8
-            // 
-            this.sidePanel8.AllowResize = false;
-            this.sidePanel8.BorderThickness = 0;
-            this.sidePanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidePanel8.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel8.Name = "sidePanel8";
-            this.sidePanel8.Size = new System.Drawing.Size(1442, 32);
-            this.sidePanel8.TabIndex = 2;
-            this.sidePanel8.Text = "sidePanel8";
-            // 
-            // sidePanel9
-            // 
-            this.sidePanel9.AllowResize = false;
-            this.sidePanel9.BorderThickness = 0;
-            this.sidePanel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel9.Location = new System.Drawing.Point(1414, 32);
-            this.sidePanel9.Name = "sidePanel9";
-            this.sidePanel9.Size = new System.Drawing.Size(28, 80);
-            this.sidePanel9.TabIndex = 3;
-            this.sidePanel9.Text = "sidePanel9";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl13.Location = new System.Drawing.Point(1342, 32);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
-            this.labelControl13.Size = new System.Drawing.Size(72, 47);
-            this.labelControl13.TabIndex = 4;
-            this.labelControl13.Text = "date";
-            // 
             // InventoryForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
@@ -577,8 +577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.sidePanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProducts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -617,8 +617,8 @@
         private DevExpress.XtraEditors.SidePanel sidePanel6;
         private DevExpress.XtraEditors.SidePanel sidePanel5;
         private DevExpress.XtraEditors.SidePanel sidePanel4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gcProducts;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvProducts;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
