@@ -179,6 +179,7 @@
             this.ClientSize = new System.Drawing.Size(1515, 987);
             this.Controls.Add(this.mainPC);
             this.Controls.Add(this.sidePanel1);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.Image")));
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

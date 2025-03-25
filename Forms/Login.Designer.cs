@@ -50,12 +50,15 @@
             this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.btnExit.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.btnExit.Appearance.Options.UseBackColor = true;
+            this.btnExit.Appearance.Options.UseBorderColor = true;
             this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.Violet;
             this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
             this.btnExit.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearancePressed.Options.UseBackColor = true;
+            this.btnExit.AppearancePressed.Options.UseBorderColor = true;
             this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
             this.btnExit.Location = new System.Drawing.Point(2, 729);
             this.btnExit.Name = "btnExit";
@@ -206,6 +209,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnExit);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Login.IconOptions.Image")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
