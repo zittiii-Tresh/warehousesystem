@@ -385,6 +385,7 @@
             // 
             // firstnameTE
             // 
+            this.firstnameTE.EditValue = "first name";
             this.firstnameTE.Location = new System.Drawing.Point(156, 54);
             this.firstnameTE.Name = "firstnameTE";
             this.firstnameTE.Properties.AutoHeight = false;
