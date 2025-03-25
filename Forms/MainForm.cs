@@ -35,5 +35,14 @@ namespace warehousesystem.Forms
             mainPC.Controls.Add(inventoryControl);
 
         }
+
+        private void employeeBTN_Click(object sender, EventArgs e)
+        {
+            mainPC.Controls.Clear();
+            EmployeeForm employeeControl = new EmployeeForm();
+            employeeControl.Dock = DockStyle.Fill;
+
+            mainPC.Controls.Add(employeeControl);
+        }
     }
 }
