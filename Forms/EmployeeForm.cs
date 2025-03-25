@@ -22,6 +22,7 @@ namespace warehousesystem.Forms
         public EmployeeForm()
         {
             InitializeComponent();
+            dateLabel.Text = DateTime.Now.ToLongDateString();
         }
         public string GenerateID(string position, int recordNumber)
         {

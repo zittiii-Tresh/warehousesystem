@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.btnExit = new DevExpress.XtraEditors.SimpleButton();
             this.loginSP = new DevExpress.XtraEditors.SidePanel();
             this.LoginBTN = new DevExpress.XtraEditors.SimpleButton();
-            this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
             this.textEditUserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -40,30 +45,33 @@
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.textEditPassword = new DevExpress.XtraEditors.ButtonEdit();
             this.loginSP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExit
             // 
             this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.btnExit.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.btnExit.Appearance.Options.UseBackColor = true;
-            this.btnExit.Appearance.Options.UseBorderColor = true;
+            this.btnExit.AppearanceDisabled.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnExit.AppearanceDisabled.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnExit.AppearanceDisabled.Options.UseBackColor = true;
             this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.Violet;
             this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearanceHovered.Options.UseBackColor = true;
-            this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
             this.btnExit.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearancePressed.Options.UseBackColor = true;
-            this.btnExit.AppearancePressed.Options.UseBorderColor = true;
             this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
             this.btnExit.Location = new System.Drawing.Point(2, 729);
             this.btnExit.Name = "btnExit";
+            this.btnExit.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnExit.Size = new System.Drawing.Size(50, 45);
-            this.btnExit.TabIndex = 19;
+            this.btnExit.TabIndex = 6;
             this.btnExit.Text = "simpleButton3";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -73,8 +81,8 @@
             this.loginSP.Appearance.Options.UseBackColor = true;
             this.loginSP.Appearance.Options.UseBorderColor = true;
             this.loginSP.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loginSP.BackgroundImage")));
-            this.loginSP.Controls.Add(this.LoginBTN);
             this.loginSP.Controls.Add(this.textEditPassword);
+            this.loginSP.Controls.Add(this.LoginBTN);
             this.loginSP.Controls.Add(this.textEditUserName);
             this.loginSP.Controls.Add(this.labelControl5);
             this.loginSP.Controls.Add(this.labelControl4);
@@ -103,18 +111,9 @@
             this.LoginBTN.Name = "LoginBTN";
             this.LoginBTN.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.LoginBTN.Size = new System.Drawing.Size(262, 38);
-            this.LoginBTN.TabIndex = 8;
+            this.LoginBTN.TabIndex = 5;
             this.LoginBTN.Text = "Log In";
             this.LoginBTN.Click += new System.EventHandler(this.LoginBTN_Click);
-            // 
-            // textEditPassword
-            // 
-            this.textEditPassword.Location = new System.Drawing.Point(39, 236);
-            this.textEditPassword.Name = "textEditPassword";
-            this.textEditPassword.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.textEditPassword.Properties.Appearance.Options.UseBackColor = true;
-            this.textEditPassword.Size = new System.Drawing.Size(356, 34);
-            this.textEditPassword.TabIndex = 4;
             // 
             // textEditUserName
             // 
@@ -197,6 +196,25 @@
             this.labelControl1.TabIndex = 20;
             this.labelControl1.Text = "Inventory";
             // 
+            // imageCollection1
+            // 
+            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
+            this.imageCollection1.Images.SetKeyName(0, "eyeclose.png");
+            this.imageCollection1.Images.SetKeyName(1, "eyeopen.png");
+            // 
+            // textEditPassword
+            // 
+            this.textEditPassword.Location = new System.Drawing.Point(37, 237);
+            this.textEditPassword.Name = "textEditPassword";
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
+            this.textEditPassword.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.textEditPassword.Properties.UseSystemPasswordChar = true;
+            this.textEditPassword.Size = new System.Drawing.Size(358, 34);
+            this.textEditPassword.TabIndex = 4;
+            this.textEditPassword.Tag = "close";
+            this.textEditPassword.ButtonPressed += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.textEditPassword_ButtonPressed);
+            // 
             // Login
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
@@ -218,8 +236,9 @@
             this.Text = "Login";
             this.loginSP.ResumeLayout(false);
             this.loginSP.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +249,6 @@
         private DevExpress.XtraEditors.SimpleButton btnExit;
         private DevExpress.XtraEditors.SidePanel loginSP;
         private DevExpress.XtraEditors.SimpleButton LoginBTN;
-        private DevExpress.XtraEditors.TextEdit textEditPassword;
         private DevExpress.XtraEditors.TextEdit textEditUserName;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
@@ -238,5 +256,7 @@
         private DevExpress.XtraEditors.SidePanel sidePanel1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.Utils.ImageCollection imageCollection1;
+        private DevExpress.XtraEditors.ButtonEdit textEditPassword;
     }
 }

@@ -38,7 +38,9 @@
             this.exitBTN = new DevExpress.XtraEditors.SimpleButton();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.mainPC = new DevExpress.XtraEditors.PanelControl();
+            this.userLabel = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1.SuspendLayout();
+            this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPC)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,6 +159,7 @@
             this.sidePanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("sidePanel2.BackgroundImage")));
             this.sidePanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.sidePanel2.BorderThickness = 0;
+            this.sidePanel2.Controls.Add(this.userLabel);
             this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel2.Location = new System.Drawing.Point(0, 0);
             this.sidePanel2.Name = "sidePanel2";
@@ -172,6 +175,18 @@
             this.mainPC.Size = new System.Drawing.Size(1427, 987);
             this.mainPC.TabIndex = 1;
             // 
+            // userLabel
+            // 
+            this.userLabel.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLabel.Appearance.ForeColor = System.Drawing.Color.White;
+            this.userLabel.Appearance.Options.UseFont = true;
+            this.userLabel.Appearance.Options.UseForeColor = true;
+            this.userLabel.Location = new System.Drawing.Point(19, 216);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(46, 20);
+            this.userLabel.TabIndex = 0;
+            this.userLabel.Text = "Admin";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -186,6 +201,8 @@
             this.Text = "MainForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.sidePanel1.ResumeLayout(false);
+            this.sidePanel2.ResumeLayout(false);
+            this.sidePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPC)).EndInit();
             this.ResumeLayout(false);
 
@@ -202,5 +219,6 @@
         private DevExpress.XtraEditors.SimpleButton inventoryBTN;
         private DevExpress.XtraEditors.SimpleButton cashierBTN;
         private DevExpress.XtraEditors.PanelControl mainPC;
+        private DevExpress.XtraEditors.LabelControl userLabel;
     }
 }

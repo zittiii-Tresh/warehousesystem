@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.dateLabel = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
@@ -102,7 +102,7 @@
             this.sidePanel1.AllowResize = false;
             this.sidePanel1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.sidePanel1.Appearance.Options.UseBorderColor = true;
-            this.sidePanel1.Controls.Add(this.labelControl13);
+            this.sidePanel1.Controls.Add(this.dateLabel);
             this.sidePanel1.Controls.Add(this.sidePanel9);
             this.sidePanel1.Controls.Add(this.sidePanel8);
             this.sidePanel1.Controls.Add(this.labelControl1);
@@ -113,22 +113,22 @@
             this.sidePanel1.TabIndex = 3;
             this.sidePanel1.Text = "sidePanel1";
             // 
-            // labelControl13
+            // dateLabel
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl13.Location = new System.Drawing.Point(1342, 32);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
-            this.labelControl13.Size = new System.Drawing.Size(72, 47);
-            this.labelControl13.TabIndex = 4;
-            this.labelControl13.Text = "date";
+            this.dateLabel.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dateLabel.Appearance.Options.UseFont = true;
+            this.dateLabel.Appearance.Options.UseForeColor = true;
+            this.dateLabel.Appearance.Options.UseTextOptions = true;
+            this.dateLabel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dateLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dateLabel.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.dateLabel.Location = new System.Drawing.Point(1342, 32);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.dateLabel.Size = new System.Drawing.Size(72, 47);
+            this.dateLabel.TabIndex = 4;
+            this.dateLabel.Text = "date";
             // 
             // sidePanel9
             // 
@@ -620,7 +620,7 @@
         private DevExpress.XtraGrid.GridControl gcProducts;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProducts;
         private DevExpress.XtraGrid.Columns.GridColumn ProductName;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
         private DevExpress.XtraEditors.SidePanel sidePanel8;
     }

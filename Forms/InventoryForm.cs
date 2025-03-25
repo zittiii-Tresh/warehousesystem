@@ -18,6 +18,7 @@ namespace warehousesystem.Forms
         public InventoryForm()
         {
             InitializeComponent();
+            dateLabel.Text = DateTime.Now.ToLongDateString();
         }
 
     }
