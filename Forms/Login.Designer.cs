@@ -49,9 +49,11 @@
             // 
             // btnExit
             // 
-            this.btnExit.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExit.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnExit.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnExit.Appearance.Options.UseBackColor = true;
             this.btnExit.Appearance.Options.UseBorderColor = true;
-            this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.AppearanceHovered.BackColor = System.Drawing.Color.Violet;
             this.btnExit.AppearanceHovered.BorderColor = System.Drawing.Color.Transparent;
             this.btnExit.AppearanceHovered.Options.UseBackColor = true;
             this.btnExit.AppearanceHovered.Options.UseBorderColor = true;
@@ -62,7 +64,6 @@
             this.btnExit.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExit.ImageOptions.SvgImage")));
             this.btnExit.Location = new System.Drawing.Point(2, 729);
             this.btnExit.Name = "btnExit";
-            this.btnExit.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.btnExit.Size = new System.Drawing.Size(50, 45);
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "simpleButton3";
@@ -217,6 +218,8 @@
             // 
             // Login
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1138, 776);
@@ -227,6 +230,7 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnExit);
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("Login.IconOptions.Image")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Login";
