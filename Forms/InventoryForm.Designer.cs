@@ -63,7 +63,7 @@
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
             this.gcProducts = new DevExpress.XtraGrid.GridControl();
             this.gvProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
@@ -491,20 +491,20 @@
             // gvProducts
             // 
             this.gvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1});
+            this.ProductName});
             this.gvProducts.GridControl = this.gcProducts;
             this.gvProducts.Name = "gvProducts";
             // 
-            // gridColumn1
+            // ProductName
             // 
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.Caption = "name";
-            this.gridColumn1.MinWidth = 25;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 94;
+            this.ProductName.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductName.AppearanceHeader.Options.UseFont = true;
+            this.ProductName.Caption = "name";
+            this.ProductName.MinWidth = 25;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Visible = true;
+            this.ProductName.VisibleIndex = 0;
+            this.ProductName.Width = 94;
             // 
             // sidePanel7
             // 
@@ -619,7 +619,7 @@
         private DevExpress.XtraEditors.SidePanel sidePanel4;
         private DevExpress.XtraGrid.GridControl gcProducts;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProducts;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductName;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
         private DevExpress.XtraEditors.SidePanel sidePanel8;
