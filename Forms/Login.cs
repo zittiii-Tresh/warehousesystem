@@ -139,5 +139,11 @@ namespace warehousesystem.Forms
             mainForm.Show();
 
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            CashierForm cashier = new CashierForm();
+            cashier.Show();
+        }
     }
  }
