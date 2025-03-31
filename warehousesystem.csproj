@@ -75,6 +75,18 @@
     <Compile Include="Forms\CashierForm.Designer.cs">
       <DependentUpon>CashierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EmployeeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InventoryForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,11 +99,21 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdminRegister.cs" />
     <Compile Include="Model\AdminRegister.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CashierForm.resx">
       <DependentUpon>CashierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -99,6 +121,10 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\warehousesystem.Forms.CashierForm.resources" />
+    <EmbeddedResource Include="obj\Debug\warehousesystem.Forms.Login.resources" />
+    <EmbeddedResource Include="obj\Debug\warehousesystem.Forms.MainForm.resources" />
+    <EmbeddedResource Include="obj\Debug\warehousesystem.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,7 +136,45 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="bin\Debug\warehousesystem.exe.config" />
+    <None Include="Flow Chart Diagram\Group 1.drawio.pdf" />
+    <None Include="Forms\Registers.cs.orig" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\warehous.F722FA32.Up2Date" />
+    <None Include="obj\Debug\warehousesystem.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\warehousesystem.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\warehousesystem.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\warehousesystem.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
+    <None Include="packages\Dapper.2.1.66\.signature.p7s" />
+    <None Include="packages\Dapper.2.1.66\Dapper.2.1.66.nupkg" />
+    <None Include="packages\Dapper.2.1.66\readme.md" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\.signature.p7s" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\buildTransitive\net461\Microsoft.Bcl.AsyncInterfaces.targets" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\buildTransitive\net462\_._" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\buildTransitive\net8.0\_._" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\buildTransitive\netcoreapp2.0\Microsoft.Bcl.AsyncInterfaces.targets" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\Microsoft.Bcl.AsyncInterfaces.9.0.1.nupkg" />
+    <None Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\PACKAGE.md" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\.signature.p7s" />
+    <None Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\System.Runtime.CompilerServices.Unsafe.4.5.3.nupkg" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\.signature.p7s" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoAndroid10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\MonoTouch10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\netcoreapp2.1\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinios10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinmac20\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarintvos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\ref\xamarinwatchos10\_._" />
+    <None Include="packages\System.Threading.Tasks.Extensions.4.5.4\System.Threading.Tasks.Extensions.4.5.4.nupkg" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,6 +184,126 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="bin\Debug\Dapper.xml" />
+    <Content Include="bin\Debug\DevExpress.BonusSkins.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.Desktop.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.Desktop.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.Data.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.Data.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.Drawing.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.Drawing.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.Office.v23.2.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Office.v23.2.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v23.2.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v23.2.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v23.2.Drawing.dll" />
+    <Content Include="bin\Debug\DevExpress.Pdf.v23.2.Drawing.xml" />
+    <Content Include="bin\Debug\DevExpress.Printing.v23.2.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Printing.v23.2.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v23.2.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.RichEdit.v23.2.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v23.2.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Sparkline.v23.2.Core.xml" />
+    <Content Include="bin\Debug\DevExpress.Utils.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraBars.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraNavBar.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraNavBar.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v23.2.xml" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v23.2.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraTreeList.v23.2.xml" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\Debug\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="bin\Debug\warehousesystem.exe" />
+    <Content Include="bin\Debug\warehousesystem.pdb" />
+    <Content Include="Flow Chart Diagram\AddEmployee.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Actors.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Add Employee.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Add Product.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Database Flow Diagram.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Database Relationship Diagram.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Employee Flow.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Inventory side.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Login Flow.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-Sales System Flow.drawio.png" />
+    <Content Include="Flow Chart Diagram\Flow Chart Diagram\Group 1-ViewSales.drawio.png" />
+    <Content Include="Flow Chart Diagram\SalesSystemFlow.png" />
+    <Content Include="Flow Chart Diagram\ViewSales.png" />
+    <Content Include="obj\Debug\warehousesystem.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\warehousesystem.exe" />
+    <Content Include="obj\Debug\warehousesystem.exe.licenses" />
+    <Content Include="obj\Debug\warehousesystem.pdb" />
+    <Content Include="packages\Dapper.2.1.66\Dapper.png" />
+    <Content Include="packages\Dapper.2.1.66\lib\net461\Dapper.dll" />
+    <Content Include="packages\Dapper.2.1.66\lib\net461\Dapper.xml" />
+    <Content Include="packages\Dapper.2.1.66\lib\net8.0\Dapper.dll" />
+    <Content Include="packages\Dapper.2.1.66\lib\net8.0\Dapper.xml" />
+    <Content Include="packages\Dapper.2.1.66\lib\netstandard2.0\Dapper.dll" />
+    <Content Include="packages\Dapper.2.1.66\lib\netstandard2.0\Dapper.xml" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\Icon.png" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.xml" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\LICENSE.TXT" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netcoreapp2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\LICENSE.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\net461\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard1.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\ref\netstandard2.0\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Runtime.CompilerServices.Unsafe.4.5.3\version.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard1.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\netstandard2.0\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.xml" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\LICENSE.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\THIRD-PARTY-NOTICES.TXT" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\useSharedDesignerContext.txt" />
+    <Content Include="packages\System.Threading.Tasks.Extensions.4.5.4\version.txt" />
+    <Content Include="UpgradeLog.htm" />
+    <Content Include="UpgradeLog2.htm" />
+    <Content Include="UpgradeLog3.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

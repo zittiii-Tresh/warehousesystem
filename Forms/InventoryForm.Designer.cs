@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryForm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
+            this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -65,9 +68,6 @@
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit4.Properties)).BeginInit();
@@ -112,6 +112,45 @@
             this.sidePanel1.Size = new System.Drawing.Size(1442, 113);
             this.sidePanel1.TabIndex = 3;
             this.sidePanel1.Text = "sidePanel1";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelControl13.Appearance.Options.UseFont = true;
+            this.labelControl13.Appearance.Options.UseForeColor = true;
+            this.labelControl13.Appearance.Options.UseTextOptions = true;
+            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
+            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.labelControl13.Location = new System.Drawing.Point(1343, 32);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
+            this.labelControl13.Size = new System.Drawing.Size(71, 49);
+            this.labelControl13.TabIndex = 4;
+            this.labelControl13.Text = "date";
+            // 
+            // sidePanel9
+            // 
+            this.sidePanel9.AllowResize = false;
+            this.sidePanel9.BorderThickness = 0;
+            this.sidePanel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.sidePanel9.Location = new System.Drawing.Point(1414, 32);
+            this.sidePanel9.Name = "sidePanel9";
+            this.sidePanel9.Size = new System.Drawing.Size(28, 80);
+            this.sidePanel9.TabIndex = 3;
+            this.sidePanel9.Text = "sidePanel9";
+            // 
+            // sidePanel8
+            // 
+            this.sidePanel8.AllowResize = false;
+            this.sidePanel8.BorderThickness = 0;
+            this.sidePanel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidePanel8.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel8.Name = "sidePanel8";
+            this.sidePanel8.Size = new System.Drawing.Size(1442, 32);
+            this.sidePanel8.TabIndex = 2;
+            this.sidePanel8.Text = "sidePanel8";
             // 
             // sidePanel2
             // 
@@ -235,49 +274,49 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl12.Appearance.Options.UseFont = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
             this.labelControl12.Location = new System.Drawing.Point(37, 522);
             this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(33, 17);
+            this.labelControl12.Size = new System.Drawing.Size(33, 16);
             this.labelControl12.TabIndex = 71;
             this.labelControl12.Text = "Shelf:";
             // 
             // labelControl11
             // 
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl11.Appearance.Options.UseFont = true;
             this.labelControl11.Appearance.Options.UseForeColor = true;
             this.labelControl11.Location = new System.Drawing.Point(37, 477);
             this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(69, 17);
+            this.labelControl11.Size = new System.Drawing.Size(60, 16);
             this.labelControl11.TabIndex = 70;
             this.labelControl11.Text = "Container:";
             // 
             // labelControl10
             // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Appearance.Options.UseForeColor = true;
             this.labelControl10.Location = new System.Drawing.Point(37, 433);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(32, 17);
+            this.labelControl10.Size = new System.Drawing.Size(33, 16);
             this.labelControl10.TabIndex = 69;
             this.labelControl10.Text = "Aisle:";
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Appearance.Options.UseForeColor = true;
             this.labelControl9.Location = new System.Drawing.Point(36, 387);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(124, 18);
+            this.labelControl9.Size = new System.Drawing.Size(129, 18);
             this.labelControl9.TabIndex = 68;
             this.labelControl9.Text = "Product Location";
             // 
@@ -331,85 +370,85 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Location = new System.Drawing.Point(37, 334);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(77, 17);
+            this.labelControl8.Size = new System.Drawing.Size(74, 16);
             this.labelControl8.TabIndex = 60;
             this.labelControl8.Text = "Supplier No.";
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseForeColor = true;
             this.labelControl7.Location = new System.Drawing.Point(35, 288);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(98, 17);
+            this.labelControl7.Size = new System.Drawing.Size(93, 16);
             this.labelControl7.TabIndex = 59;
             this.labelControl7.Text = "Supplier Name:";
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
             this.labelControl6.Location = new System.Drawing.Point(35, 243);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(90, 17);
+            this.labelControl6.Size = new System.Drawing.Size(83, 16);
             this.labelControl6.TabIndex = 58;
             this.labelControl6.Text = "Product Price:";
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Appearance.Options.UseForeColor = true;
             this.labelControl5.Location = new System.Drawing.Point(35, 196);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(107, 17);
+            this.labelControl5.Size = new System.Drawing.Size(100, 16);
             this.labelControl5.TabIndex = 57;
             this.labelControl5.Text = "Low Stock Level:";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(35, 151);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(88, 17);
+            this.labelControl4.Size = new System.Drawing.Size(82, 16);
             this.labelControl4.TabIndex = 56;
             this.labelControl4.Text = "No. of Stocks:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(35, 105);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(87, 17);
+            this.labelControl3.Size = new System.Drawing.Size(84, 16);
             this.labelControl3.TabIndex = 55;
             this.labelControl3.Text = "Product Type:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(35, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(99, 17);
+            this.labelControl2.Size = new System.Drawing.Size(89, 16);
             this.labelControl2.TabIndex = 54;
             this.labelControl2.Text = "Product Name:";
             // 
@@ -510,45 +549,6 @@
             this.sidePanel4.Size = new System.Drawing.Size(1081, 51);
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
-            // 
-            // sidePanel8
-            // 
-            this.sidePanel8.AllowResize = false;
-            this.sidePanel8.BorderThickness = 0;
-            this.sidePanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidePanel8.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel8.Name = "sidePanel8";
-            this.sidePanel8.Size = new System.Drawing.Size(1442, 32);
-            this.sidePanel8.TabIndex = 2;
-            this.sidePanel8.Text = "sidePanel8";
-            // 
-            // sidePanel9
-            // 
-            this.sidePanel9.AllowResize = false;
-            this.sidePanel9.BorderThickness = 0;
-            this.sidePanel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel9.Location = new System.Drawing.Point(1414, 32);
-            this.sidePanel9.Name = "sidePanel9";
-            this.sidePanel9.Size = new System.Drawing.Size(28, 80);
-            this.sidePanel9.TabIndex = 3;
-            this.sidePanel9.Text = "sidePanel9";
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl13.Location = new System.Drawing.Point(1342, 32);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
-            this.labelControl13.Size = new System.Drawing.Size(72, 47);
-            this.labelControl13.TabIndex = 4;
-            this.labelControl13.Text = "date";
             // 
             // InventoryForm
             // 
