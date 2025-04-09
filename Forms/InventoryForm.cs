@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace warehousesystem.Forms
             LoadContainerIntoLookUpEdit();
             LoadShelfIntoLookUpEdit();
             dateLabel.Text = DateTime.Now.ToLongDateString();
+            FilterAllProducts();
         }
 
         private void producttypeaddBTN_Click(object sender, EventArgs e)
@@ -265,5 +267,146 @@ namespace warehousesystem.Forms
             containerLUE.Text = string.Empty;
             shelfLUE.Text = string.Empty;
         }
+
+        private DataTable FilterAllProducts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"SELECT p.ProductID,
+	                               p.ProductName,
+	                               pc.CategoryName,
+	                               pl.LocationID,
+                                   p.LowStockLevel,
+	                               p.StockQuantity,
+	                               p.StockStatus,
+	                               p.ProductPrice,
+	                               p.SupplierName,
+	                               p.SupplierNo
+	   
+                            FROM pro.Product p
+                            LEFT JOIN pro.ProductCategory pc
+                            ON pc.CategoryID = p.CategoryID
+                            LEFT JOIN pro.ProductLocation pl
+                            ON pl.ProductID = p.ProductID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        gcProducts.DataSource = dataTable;
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        private void gvProducts_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            string productID = (Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductID")));
+            productidTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductID"));
+            productnameTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductName"));
+            producttypeLUE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("CategoryName"));
+            stocksTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("StockQuantity"));
+            lowstocklevelTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("LowStockLevel"));
+            productpriceTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductPrice"));
+            suppliernameTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("SupplierName"));
+            suppliernoTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("SupplierNo"));
+
+            string locationID = Convert.ToString(gvProducts.GetFocusedRowCellValue("LocationID"));
+            var parts = locationID.Split('.');
+            if (parts.Length == 3)
+            {
+                aisleLUE.Text = parts[0];
+                containerLUE.Text = parts[1];
+                shelfLUE.Text = parts[2];
+            }
+
+        }
+
+        public bool Update(string productID, string productName, int categoryID, int stocks, int lowStocklevel, double productPrice, string supplierName, string supplierNo, string locationID)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                var parameters = new
+                {
+                    ProductID = productID,
+                    ProductName = productName,
+                    CategoryID = categoryID,
+                    StockQuantity = stocks,
+                    LowStockLevel = lowStocklevel,
+                    ProductPrice = productPrice,
+                    SupplierName = supplierName,
+                    SupplierNo = supplierNo,
+                    LocationID = locationID
+                };
+
+                int rowsAffected = connection.Execute("UpdateProduct", parameters, commandType: CommandType.StoredProcedure);
+                return rowsAffected > 0;
+            }
+        }
+
+        private void updateBTN_Click(object sender, EventArgs e)
+        {
+            string productID = (string)gvProducts.GetFocusedRowCellValue("ProductID");
+            string productName = productnameTE.Text;
+            int categoryID = Convert.ToInt32(producttypeLUE.EditValue);
+            int stocks = Convert.ToInt32(stocksTE.Text);
+            int lowStocklevel = Convert.ToInt32(lowstocklevelTE.Text);
+            double productPrice = Convert.ToDouble(productpriceTE.Text);
+            string supplierName = suppliernameTE.Text;
+            string supplierNo = suppliernoTE.Text;
+
+            string locationID = $"{aisleLUE.Text}.{containerLUE.Text}.{shelfLUE.Text}";
+
+            bool isUpdated = Update(productID, productName, categoryID, stocks, lowStocklevel, productPrice, supplierName, supplierNo, locationID);
+
+            if (isUpdated)
+            {
+                gcProducts.DataSource = FilterAllProducts();
+                XtraMessageBox.Show("Product Successfully Updated!");
+            }
+            else
+            {
+                XtraMessageBox.Show("No products were updated.");
+            }
+        }
+
+        private void deleteBTN_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = XtraMessageBox.Show(
+             "Are you sure you want to delete this product?",
+             "Confirm Delete",
+             MessageBoxButtons.YesNo,
+             MessageBoxIcon.Warning
+             );
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                string deleteId = (string)gvProducts.GetFocusedRowCellValue("ProductID");
+
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string deleteLocation = "DELETE FROM pro.ProductLocation WHERE ProductID = @ProductID";
+                    string deleteProduct = "DELETE FROM pro.Product WHERE ProductID = @ProductID";
+
+                    connection.Execute(deleteLocation, new { ProductID = deleteId });
+                    connection.Execute(deleteProduct, new { ProductID = deleteId });
+
+                    XtraMessageBox.Show("Product successfully deleted!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                gcProducts.DataSource = FilterAllProducts();
+            }
+            else
+            {
+                XtraMessageBox.Show("Delete action canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
+

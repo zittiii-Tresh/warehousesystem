@@ -42,8 +42,8 @@
             this.productidTE = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.clearBTN = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.deleteBTN = new DevExpress.XtraEditors.SimpleButton();
+            this.updateBTN = new DevExpress.XtraEditors.SimpleButton();
             this.addBTN = new DevExpress.XtraEditors.SimpleButton();
             this.shelfLUE = new DevExpress.XtraEditors.LookUpEdit();
             this.containerLUE = new DevExpress.XtraEditors.LookUpEdit();
@@ -66,11 +66,20 @@
             this.sidePanel3 = new DevExpress.XtraEditors.SidePanel();
             this.gcProducts = new DevExpress.XtraGrid.GridControl();
             this.gvProducts = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CategoryName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StockQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.StockStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LocationID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SupplierName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SupplierNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
+            this.LowStockLevel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.suppliernoTE.Properties)).BeginInit();
@@ -160,15 +169,15 @@
             // 
             this.sidePanel2.AllowResize = false;
             this.sidePanel2.BorderThickness = 0;
+            this.sidePanel2.Controls.Add(this.clearBTN);
             this.sidePanel2.Controls.Add(this.suppliernoTE);
             this.sidePanel2.Controls.Add(this.suppliernameTE);
             this.sidePanel2.Controls.Add(this.labelControl8);
             this.sidePanel2.Controls.Add(this.producttypeaddBTN);
             this.sidePanel2.Controls.Add(this.productidTE);
             this.sidePanel2.Controls.Add(this.labelControl14);
-            this.sidePanel2.Controls.Add(this.clearBTN);
-            this.sidePanel2.Controls.Add(this.simpleButton2);
-            this.sidePanel2.Controls.Add(this.simpleButton1);
+            this.sidePanel2.Controls.Add(this.deleteBTN);
+            this.sidePanel2.Controls.Add(this.updateBTN);
             this.sidePanel2.Controls.Add(this.addBTN);
             this.sidePanel2.Controls.Add(this.shelfLUE);
             this.sidePanel2.Controls.Add(this.containerLUE);
@@ -264,7 +273,7 @@
             this.clearBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.clearBTN.Appearance.Options.UseBackColor = true;
             this.clearBTN.Appearance.Options.UseBorderColor = true;
-            this.clearBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.clearBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("clearBTN.ImageOptions.Image")));
             this.clearBTN.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.clearBTN.ImageOptions.SvgImageSize = new System.Drawing.Size(33, 33);
             this.clearBTN.Location = new System.Drawing.Point(301, 612);
@@ -273,30 +282,32 @@
             this.clearBTN.TabIndex = 78;
             this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
             // 
-            // simpleButton2
+            // deleteBTN
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseBorderColor = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(212, 613);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(89, 40);
-            this.simpleButton2.TabIndex = 77;
+            this.deleteBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.deleteBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.deleteBTN.Appearance.Options.UseBackColor = true;
+            this.deleteBTN.Appearance.Options.UseBorderColor = true;
+            this.deleteBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.deleteBTN.Location = new System.Drawing.Point(212, 613);
+            this.deleteBTN.Name = "deleteBTN";
+            this.deleteBTN.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.deleteBTN.Size = new System.Drawing.Size(89, 40);
+            this.deleteBTN.TabIndex = 77;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
-            // simpleButton1
+            // updateBTN
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(121, 613);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(89, 40);
-            this.simpleButton1.TabIndex = 76;
+            this.updateBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.updateBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.updateBTN.Appearance.Options.UseBackColor = true;
+            this.updateBTN.Appearance.Options.UseBorderColor = true;
+            this.updateBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.updateBTN.Location = new System.Drawing.Point(121, 613);
+            this.updateBTN.Name = "updateBTN";
+            this.updateBTN.Size = new System.Drawing.Size(89, 40);
+            this.updateBTN.TabIndex = 76;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // addBTN
             // 
@@ -552,20 +563,208 @@
             // gvProducts
             // 
             this.gvProducts.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1});
+            this.ProductID,
+            this.ProductName,
+            this.CategoryName,
+            this.StockQuantity,
+            this.StockStatus,
+            this.LocationID,
+            this.ProductPrice,
+            this.SupplierName,
+            this.SupplierNo,
+            this.LowStockLevel});
             this.gvProducts.GridControl = this.gcProducts;
             this.gvProducts.Name = "gvProducts";
+            this.gvProducts.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvProducts_RowClick);
             // 
-            // gridColumn1
+            // ProductID
             // 
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.Caption = "name";
-            this.gridColumn1.MinWidth = 25;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 94;
+            this.ProductID.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.ProductID.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ProductID.AppearanceCell.Options.UseFont = true;
+            this.ProductID.AppearanceCell.Options.UseForeColor = true;
+            this.ProductID.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.ProductID.AppearanceHeader.Options.UseFont = true;
+            this.ProductID.AppearanceHeader.Options.UseTextOptions = true;
+            this.ProductID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProductID.Caption = "Product ID";
+            this.ProductID.FieldName = "ProductID";
+            this.ProductID.MinWidth = 25;
+            this.ProductID.Name = "ProductID";
+            this.ProductID.OptionsColumn.AllowEdit = false;
+            this.ProductID.OptionsColumn.AllowFocus = false;
+            this.ProductID.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.ProductID.Visible = true;
+            this.ProductID.VisibleIndex = 0;
+            this.ProductID.Width = 128;
+            // 
+            // ProductName
+            // 
+            this.ProductName.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.ProductName.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ProductName.AppearanceCell.Options.UseFont = true;
+            this.ProductName.AppearanceCell.Options.UseForeColor = true;
+            this.ProductName.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.ProductName.AppearanceHeader.Options.UseFont = true;
+            this.ProductName.AppearanceHeader.Options.UseTextOptions = true;
+            this.ProductName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProductName.Caption = "Product Name";
+            this.ProductName.FieldName = "ProductName";
+            this.ProductName.MinWidth = 25;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.OptionsColumn.AllowEdit = false;
+            this.ProductName.OptionsColumn.AllowFocus = false;
+            this.ProductName.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.ProductName.Visible = true;
+            this.ProductName.VisibleIndex = 1;
+            this.ProductName.Width = 201;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.CategoryName.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.CategoryName.AppearanceCell.Options.UseFont = true;
+            this.CategoryName.AppearanceCell.Options.UseForeColor = true;
+            this.CategoryName.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.CategoryName.AppearanceHeader.Options.UseFont = true;
+            this.CategoryName.AppearanceHeader.Options.UseTextOptions = true;
+            this.CategoryName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CategoryName.Caption = "Category";
+            this.CategoryName.FieldName = "CategoryName";
+            this.CategoryName.MinWidth = 25;
+            this.CategoryName.Name = "CategoryName";
+            this.CategoryName.OptionsColumn.AllowEdit = false;
+            this.CategoryName.OptionsColumn.AllowFocus = false;
+            this.CategoryName.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.CategoryName.Visible = true;
+            this.CategoryName.VisibleIndex = 2;
+            this.CategoryName.Width = 141;
+            // 
+            // StockQuantity
+            // 
+            this.StockQuantity.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.StockQuantity.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StockQuantity.AppearanceCell.Options.UseFont = true;
+            this.StockQuantity.AppearanceCell.Options.UseForeColor = true;
+            this.StockQuantity.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.StockQuantity.AppearanceHeader.Options.UseFont = true;
+            this.StockQuantity.AppearanceHeader.Options.UseTextOptions = true;
+            this.StockQuantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.StockQuantity.Caption = "Quantity";
+            this.StockQuantity.FieldName = "StockQuantity";
+            this.StockQuantity.MinWidth = 25;
+            this.StockQuantity.Name = "StockQuantity";
+            this.StockQuantity.OptionsColumn.AllowEdit = false;
+            this.StockQuantity.OptionsColumn.AllowFocus = false;
+            this.StockQuantity.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.StockQuantity.Visible = true;
+            this.StockQuantity.VisibleIndex = 4;
+            this.StockQuantity.Width = 110;
+            // 
+            // StockStatus
+            // 
+            this.StockStatus.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.StockStatus.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.StockStatus.AppearanceCell.Options.UseFont = true;
+            this.StockStatus.AppearanceCell.Options.UseForeColor = true;
+            this.StockStatus.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.StockStatus.AppearanceHeader.Options.UseFont = true;
+            this.StockStatus.AppearanceHeader.Options.UseTextOptions = true;
+            this.StockStatus.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.StockStatus.Caption = "Stock Status";
+            this.StockStatus.FieldName = "StockStatus";
+            this.StockStatus.MinWidth = 25;
+            this.StockStatus.Name = "StockStatus";
+            this.StockStatus.OptionsColumn.AllowEdit = false;
+            this.StockStatus.OptionsColumn.AllowFocus = false;
+            this.StockStatus.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.StockStatus.Visible = true;
+            this.StockStatus.VisibleIndex = 5;
+            this.StockStatus.Width = 162;
+            // 
+            // LocationID
+            // 
+            this.LocationID.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.LocationID.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.LocationID.AppearanceCell.Options.UseFont = true;
+            this.LocationID.AppearanceCell.Options.UseForeColor = true;
+            this.LocationID.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.LocationID.AppearanceHeader.Options.UseFont = true;
+            this.LocationID.AppearanceHeader.Options.UseTextOptions = true;
+            this.LocationID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.LocationID.Caption = "Location";
+            this.LocationID.FieldName = "LocationID";
+            this.LocationID.MinWidth = 25;
+            this.LocationID.Name = "LocationID";
+            this.LocationID.OptionsColumn.AllowEdit = false;
+            this.LocationID.OptionsColumn.AllowFocus = false;
+            this.LocationID.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.LocationID.Visible = true;
+            this.LocationID.VisibleIndex = 3;
+            this.LocationID.Width = 104;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.ProductPrice.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.ProductPrice.AppearanceCell.Options.UseFont = true;
+            this.ProductPrice.AppearanceCell.Options.UseForeColor = true;
+            this.ProductPrice.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.ProductPrice.AppearanceHeader.Options.UseFont = true;
+            this.ProductPrice.AppearanceHeader.Options.UseTextOptions = true;
+            this.ProductPrice.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ProductPrice.Caption = "Price";
+            this.ProductPrice.FieldName = "ProductPrice";
+            this.ProductPrice.MinWidth = 25;
+            this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.OptionsColumn.AllowEdit = false;
+            this.ProductPrice.OptionsColumn.AllowFocus = false;
+            this.ProductPrice.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.ProductPrice.Visible = true;
+            this.ProductPrice.VisibleIndex = 6;
+            this.ProductPrice.Width = 152;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.SupplierName.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SupplierName.AppearanceCell.Options.UseFont = true;
+            this.SupplierName.AppearanceCell.Options.UseForeColor = true;
+            this.SupplierName.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SupplierName.AppearanceHeader.Options.UseFont = true;
+            this.SupplierName.AppearanceHeader.Options.UseTextOptions = true;
+            this.SupplierName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SupplierName.Caption = "Supplier Name";
+            this.SupplierName.FieldName = "SupplierName";
+            this.SupplierName.MinWidth = 25;
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.OptionsColumn.AllowEdit = false;
+            this.SupplierName.OptionsColumn.AllowFocus = false;
+            this.SupplierName.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.SupplierName.Visible = true;
+            this.SupplierName.VisibleIndex = 7;
+            this.SupplierName.Width = 158;
+            // 
+            // SupplierNo
+            // 
+            this.SupplierNo.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F);
+            this.SupplierNo.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.SupplierNo.AppearanceCell.Options.UseFont = true;
+            this.SupplierNo.AppearanceCell.Options.UseForeColor = true;
+            this.SupplierNo.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SupplierNo.AppearanceHeader.Options.UseFont = true;
+            this.SupplierNo.AppearanceHeader.Options.UseTextOptions = true;
+            this.SupplierNo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SupplierNo.Caption = "Contact No.";
+            this.SupplierNo.FieldName = "SupplierNo";
+            this.SupplierNo.MinWidth = 25;
+            this.SupplierNo.Name = "SupplierNo";
+            this.SupplierNo.OptionsColumn.AllowEdit = false;
+            this.SupplierNo.OptionsColumn.AllowFocus = false;
+            this.SupplierNo.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.SupplierNo.Visible = true;
+            this.SupplierNo.VisibleIndex = 8;
+            this.SupplierNo.Width = 179;
             // 
             // sidePanel7
             // 
@@ -611,6 +810,14 @@
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
             // 
+            // LowStockLevel
+            // 
+            this.LowStockLevel.Caption = "LowStockLevel";
+            this.LowStockLevel.FieldName = "LowStockLevel";
+            this.LowStockLevel.MinWidth = 25;
+            this.LowStockLevel.Name = "LowStockLevel";
+            this.LowStockLevel.Width = 94;
+            // 
             // InventoryForm
             // 
             this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
@@ -650,8 +857,8 @@
         private DevExpress.XtraEditors.SidePanel sidePanel1;
         private DevExpress.XtraEditors.SidePanel sidePanel2;
         private DevExpress.XtraEditors.SimpleButton clearBTN;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton deleteBTN;
+        private DevExpress.XtraEditors.SimpleButton updateBTN;
         private DevExpress.XtraEditors.SimpleButton addBTN;
         private DevExpress.XtraEditors.LookUpEdit shelfLUE;
         private DevExpress.XtraEditors.LookUpEdit containerLUE;
@@ -678,7 +885,7 @@
         private DevExpress.XtraEditors.SidePanel sidePanel4;
         private DevExpress.XtraGrid.GridControl gcProducts;
         private DevExpress.XtraGrid.Views.Grid.GridView gvProducts;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductID;
         private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
         private DevExpress.XtraEditors.SidePanel sidePanel8;
@@ -688,5 +895,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit suppliernoTE;
         private DevExpress.XtraEditors.TextEdit suppliernameTE;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductName;
+        private DevExpress.XtraGrid.Columns.GridColumn CategoryName;
+        private DevExpress.XtraGrid.Columns.GridColumn StockQuantity;
+        private DevExpress.XtraGrid.Columns.GridColumn StockStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn ProductPrice;
+        private DevExpress.XtraGrid.Columns.GridColumn SupplierName;
+        private DevExpress.XtraGrid.Columns.GridColumn SupplierNo;
+        private DevExpress.XtraGrid.Columns.GridColumn LocationID;
+        private DevExpress.XtraGrid.Columns.GridColumn LowStockLevel;
     }
 }
