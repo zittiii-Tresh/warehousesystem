@@ -38,13 +38,14 @@
             this.EmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ContactNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.EmployeeStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Password = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.clearBTN = new DevExpress.XtraEditors.SimpleButton();
+            this.deleteBTN = new DevExpress.XtraEditors.SimpleButton();
+            this.updateBTN = new DevExpress.XtraEditors.SimpleButton();
             this.addBTN = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.middlenameTE = new DevExpress.XtraEditors.TextEdit();
@@ -65,7 +66,7 @@
             this.statusRG = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.dateLabel = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel3.SuspendLayout();
@@ -116,17 +117,19 @@
             this.Position,
             this.EmployeeName,
             this.ContactNo,
-            this.EmployeeStatus});
+            this.EmployeeStatus,
+            this.Password});
             this.gvEmployee.GridControl = this.gcEmployee;
             this.gvEmployee.Name = "gvEmployee";
+            this.gvEmployee.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvEmployee_RowClick);
             // 
             // RecordNumber
             // 
-            this.RecordNumber.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecordNumber.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordNumber.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.RecordNumber.AppearanceCell.Options.UseFont = true;
             this.RecordNumber.AppearanceCell.Options.UseForeColor = true;
-            this.RecordNumber.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecordNumber.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RecordNumber.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.RecordNumber.AppearanceHeader.Options.UseFont = true;
             this.RecordNumber.AppearanceHeader.Options.UseForeColor = true;
@@ -136,17 +139,20 @@
             this.RecordNumber.FieldName = "RecordNumber";
             this.RecordNumber.MinWidth = 25;
             this.RecordNumber.Name = "RecordNumber";
+            this.RecordNumber.OptionsColumn.AllowEdit = false;
+            this.RecordNumber.OptionsColumn.AllowFocus = false;
+            this.RecordNumber.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.RecordNumber.Visible = true;
             this.RecordNumber.VisibleIndex = 0;
             this.RecordNumber.Width = 47;
             // 
             // EmployeeID
             // 
-            this.EmployeeID.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeID.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeID.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.EmployeeID.AppearanceCell.Options.UseFont = true;
             this.EmployeeID.AppearanceCell.Options.UseForeColor = true;
-            this.EmployeeID.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeID.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeID.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.EmployeeID.AppearanceHeader.Options.UseFont = true;
             this.EmployeeID.AppearanceHeader.Options.UseForeColor = true;
@@ -157,17 +163,20 @@
             this.EmployeeID.FieldName = "EmployeeID";
             this.EmployeeID.MinWidth = 25;
             this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.OptionsColumn.AllowEdit = false;
+            this.EmployeeID.OptionsColumn.AllowFocus = false;
+            this.EmployeeID.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.EmployeeID.Visible = true;
             this.EmployeeID.VisibleIndex = 1;
             this.EmployeeID.Width = 198;
             // 
             // Position
             // 
-            this.Position.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Position.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Position.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.Position.AppearanceCell.Options.UseFont = true;
             this.Position.AppearanceCell.Options.UseForeColor = true;
-            this.Position.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Position.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Position.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.Position.AppearanceHeader.Options.UseFont = true;
             this.Position.AppearanceHeader.Options.UseForeColor = true;
@@ -175,17 +184,20 @@
             this.Position.FieldName = "PositionID";
             this.Position.MinWidth = 25;
             this.Position.Name = "Position";
+            this.Position.OptionsColumn.AllowEdit = false;
+            this.Position.OptionsColumn.AllowFocus = false;
+            this.Position.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.Position.Visible = true;
             this.Position.VisibleIndex = 2;
             this.Position.Width = 196;
             // 
             // EmployeeName
             // 
-            this.EmployeeName.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeName.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeName.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.EmployeeName.AppearanceCell.Options.UseFont = true;
             this.EmployeeName.AppearanceCell.Options.UseForeColor = true;
-            this.EmployeeName.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeName.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeName.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.EmployeeName.AppearanceHeader.Options.UseFont = true;
             this.EmployeeName.AppearanceHeader.Options.UseForeColor = true;
@@ -193,17 +205,20 @@
             this.EmployeeName.FieldName = "EmployeeName";
             this.EmployeeName.MinWidth = 25;
             this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.OptionsColumn.AllowEdit = false;
+            this.EmployeeName.OptionsColumn.AllowFocus = false;
+            this.EmployeeName.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.EmployeeName.Visible = true;
             this.EmployeeName.VisibleIndex = 3;
             this.EmployeeName.Width = 417;
             // 
             // ContactNo
             // 
-            this.ContactNo.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactNo.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactNo.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.ContactNo.AppearanceCell.Options.UseFont = true;
             this.ContactNo.AppearanceCell.Options.UseForeColor = true;
-            this.ContactNo.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactNo.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContactNo.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.ContactNo.AppearanceHeader.Options.UseFont = true;
             this.ContactNo.AppearanceHeader.Options.UseForeColor = true;
@@ -211,17 +226,20 @@
             this.ContactNo.FieldName = "ContactNo";
             this.ContactNo.MinWidth = 25;
             this.ContactNo.Name = "ContactNo";
+            this.ContactNo.OptionsColumn.AllowEdit = false;
+            this.ContactNo.OptionsColumn.AllowFocus = false;
+            this.ContactNo.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.ContactNo.Visible = true;
             this.ContactNo.VisibleIndex = 4;
             this.ContactNo.Width = 347;
             // 
             // EmployeeStatus
             // 
-            this.EmployeeStatus.AppearanceCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeStatus.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeStatus.AppearanceCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.EmployeeStatus.AppearanceCell.Options.UseFont = true;
             this.EmployeeStatus.AppearanceCell.Options.UseForeColor = true;
-            this.EmployeeStatus.AppearanceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeStatus.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeStatus.AppearanceHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.EmployeeStatus.AppearanceHeader.Options.UseFont = true;
             this.EmployeeStatus.AppearanceHeader.Options.UseForeColor = true;
@@ -229,9 +247,20 @@
             this.EmployeeStatus.FieldName = "EmployeeStatus";
             this.EmployeeStatus.MinWidth = 25;
             this.EmployeeStatus.Name = "EmployeeStatus";
+            this.EmployeeStatus.OptionsColumn.AllowEdit = false;
+            this.EmployeeStatus.OptionsColumn.AllowFocus = false;
+            this.EmployeeStatus.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
             this.EmployeeStatus.Visible = true;
             this.EmployeeStatus.VisibleIndex = 5;
             this.EmployeeStatus.Width = 183;
+            // 
+            // Password
+            // 
+            this.Password.Caption = "Password";
+            this.Password.FieldName = "Password";
+            this.Password.MinWidth = 25;
+            this.Password.Name = "Password";
+            this.Password.Width = 94;
             // 
             // sidePanel7
             // 
@@ -277,44 +306,47 @@
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
             // 
-            // simpleButton3
+            // clearBTN
             // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton3.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseBorderColor = true;
-            this.simpleButton3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton3.ImageOptions.SvgImageSize = new System.Drawing.Size(33, 33);
-            this.simpleButton3.Location = new System.Drawing.Point(300, 510);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(43, 41);
-            this.simpleButton3.TabIndex = 78;
+            this.clearBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.clearBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.clearBTN.Appearance.Options.UseBackColor = true;
+            this.clearBTN.Appearance.Options.UseBorderColor = true;
+            this.clearBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("clearBTN.ImageOptions.Image")));
+            this.clearBTN.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.clearBTN.ImageOptions.SvgImageSize = new System.Drawing.Size(33, 33);
+            this.clearBTN.Location = new System.Drawing.Point(300, 510);
+            this.clearBTN.Name = "clearBTN";
+            this.clearBTN.Size = new System.Drawing.Size(43, 41);
+            this.clearBTN.TabIndex = 78;
+            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
             // 
-            // simpleButton2
+            // deleteBTN
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseBorderColor = true;
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(211, 511);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(89, 40);
-            this.simpleButton2.TabIndex = 77;
+            this.deleteBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.deleteBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.deleteBTN.Appearance.Options.UseBackColor = true;
+            this.deleteBTN.Appearance.Options.UseBorderColor = true;
+            this.deleteBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteBTN.ImageOptions.Image")));
+            this.deleteBTN.Location = new System.Drawing.Point(211, 511);
+            this.deleteBTN.Name = "deleteBTN";
+            this.deleteBTN.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
+            this.deleteBTN.Size = new System.Drawing.Size(89, 40);
+            this.deleteBTN.TabIndex = 77;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
-            // simpleButton1
+            // updateBTN
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(120, 511);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(89, 40);
-            this.simpleButton1.TabIndex = 76;
+            this.updateBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.updateBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.updateBTN.Appearance.Options.UseBackColor = true;
+            this.updateBTN.Appearance.Options.UseBorderColor = true;
+            this.updateBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("updateBTN.ImageOptions.Image")));
+            this.updateBTN.Location = new System.Drawing.Point(120, 511);
+            this.updateBTN.Name = "updateBTN";
+            this.updateBTN.Size = new System.Drawing.Size(89, 40);
+            this.updateBTN.TabIndex = 76;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // addBTN
             // 
@@ -331,13 +363,13 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl9.Appearance.Options.UseFont = true;
             this.labelControl9.Appearance.Options.UseForeColor = true;
             this.labelControl9.Location = new System.Drawing.Point(36, 332);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(62, 18);
+            this.labelControl9.Size = new System.Drawing.Size(55, 18);
             this.labelControl9.TabIndex = 68;
             this.labelControl9.Text = "Position";
             // 
@@ -393,73 +425,73 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl7.Appearance.Options.UseFont = true;
             this.labelControl7.Appearance.Options.UseForeColor = true;
             this.labelControl7.Location = new System.Drawing.Point(35, 288);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(63, 16);
+            this.labelControl7.Size = new System.Drawing.Size(65, 17);
             this.labelControl7.TabIndex = 59;
             this.labelControl7.Text = "Password:";
             // 
             // labelControl6
             // 
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
             this.labelControl6.Location = new System.Drawing.Point(35, 243);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(69, 16);
+            this.labelControl6.Size = new System.Drawing.Size(82, 17);
             this.labelControl6.TabIndex = 58;
             this.labelControl6.Text = "Contact No.";
             // 
             // labelControl5
             // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl5.Appearance.Options.UseFont = true;
             this.labelControl5.Appearance.Options.UseForeColor = true;
             this.labelControl5.Location = new System.Drawing.Point(35, 196);
             this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(101, 16);
+            this.labelControl5.Size = new System.Drawing.Size(107, 17);
             this.labelControl5.TabIndex = 57;
             this.labelControl5.Text = "Name Extension:";
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(35, 151);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(68, 16);
+            this.labelControl4.Size = new System.Drawing.Size(73, 17);
             this.labelControl4.TabIndex = 56;
             this.labelControl4.Text = "Last Name:";
             // 
             // labelControl3
             // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl3.Appearance.Options.UseFont = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
             this.labelControl3.Location = new System.Drawing.Point(35, 105);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(84, 16);
+            this.labelControl3.Size = new System.Drawing.Size(91, 17);
             this.labelControl3.TabIndex = 55;
             this.labelControl3.Text = "Middle Name:";
             // 
             // labelControl2
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
             this.labelControl2.Location = new System.Drawing.Point(35, 59);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 16);
+            this.labelControl2.Size = new System.Drawing.Size(71, 17);
             this.labelControl2.TabIndex = 54;
             this.labelControl2.Text = "First Name:";
             // 
@@ -468,9 +500,9 @@
             this.sidePanel2.AllowResize = false;
             this.sidePanel2.BorderThickness = 0;
             this.sidePanel2.Controls.Add(this.labelControl8);
-            this.sidePanel2.Controls.Add(this.simpleButton3);
-            this.sidePanel2.Controls.Add(this.simpleButton2);
-            this.sidePanel2.Controls.Add(this.simpleButton1);
+            this.sidePanel2.Controls.Add(this.clearBTN);
+            this.sidePanel2.Controls.Add(this.deleteBTN);
+            this.sidePanel2.Controls.Add(this.updateBTN);
             this.sidePanel2.Controls.Add(this.addBTN);
             this.sidePanel2.Controls.Add(this.labelControl9);
             this.sidePanel2.Controls.Add(this.middlenameTE);
@@ -496,13 +528,13 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Location = new System.Drawing.Point(35, 422);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(127, 18);
+            this.labelControl8.Size = new System.Drawing.Size(120, 18);
             this.labelControl8.TabIndex = 79;
             this.labelControl8.Text = "Employee Status";
             // 
@@ -512,7 +544,7 @@
             this.positionRG.Name = "positionRG";
             this.positionRG.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.positionRG.Properties.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.positionRG.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionRG.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.positionRG.Properties.Appearance.Options.UseBackColor = true;
             this.positionRG.Properties.Appearance.Options.UseBorderColor = true;
             this.positionRG.Properties.Appearance.Options.UseFont = true;
@@ -532,7 +564,7 @@
             this.statusRG.Name = "statusRG";
             this.statusRG.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.statusRG.Properties.Appearance.BorderColor = System.Drawing.Color.Transparent;
-            this.statusRG.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusRG.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusRG.Properties.Appearance.Options.UseBackColor = true;
             this.statusRG.Properties.Appearance.Options.UseBorderColor = true;
             this.statusRG.Properties.Appearance.Options.UseFont = true;
@@ -547,13 +579,13 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI Variable Display", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Century Gothic", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(181)))), ((int)(((byte)(84)))));
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
             this.labelControl1.Location = new System.Drawing.Point(27, 21);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(294, 78);
+            this.labelControl1.Size = new System.Drawing.Size(308, 68);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Employees";
             // 
@@ -562,7 +594,7 @@
             this.sidePanel1.AllowResize = false;
             this.sidePanel1.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(159)))), ((int)(((byte)(159)))));
             this.sidePanel1.Appearance.Options.UseBorderColor = true;
-            this.sidePanel1.Controls.Add(this.labelControl13);
+            this.sidePanel1.Controls.Add(this.dateLabel);
             this.sidePanel1.Controls.Add(this.sidePanel9);
             this.sidePanel1.Controls.Add(this.labelControl1);
             this.sidePanel1.Controls.Add(this.sidePanel8);
@@ -573,22 +605,22 @@
             this.sidePanel1.TabIndex = 32;
             this.sidePanel1.Text = "sidePanel1";
             // 
-            // labelControl13
+            // dateLabel
             // 
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl13.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelControl13.Appearance.Options.UseFont = true;
-            this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Appearance.Options.UseTextOptions = true;
-            this.labelControl13.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelControl13.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
-            this.labelControl13.Location = new System.Drawing.Point(1343, 32);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Padding = new System.Windows.Forms.Padding(10);
-            this.labelControl13.Size = new System.Drawing.Size(71, 49);
-            this.labelControl13.TabIndex = 5;
-            this.labelControl13.Text = "date";
+            this.dateLabel.Appearance.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dateLabel.Appearance.Options.UseFont = true;
+            this.dateLabel.Appearance.Options.UseForeColor = true;
+            this.dateLabel.Appearance.Options.UseTextOptions = true;
+            this.dateLabel.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.dateLabel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dateLabel.ImageAlignToText = DevExpress.XtraEditors.ImageAlignToText.RightCenter;
+            this.dateLabel.Location = new System.Drawing.Point(1342, 32);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Padding = new System.Windows.Forms.Padding(10);
+            this.dateLabel.Size = new System.Drawing.Size(72, 47);
+            this.dateLabel.TabIndex = 5;
+            this.dateLabel.Text = "date";
             // 
             // sidePanel9
             // 
@@ -652,9 +684,9 @@
         private DevExpress.XtraEditors.SidePanel sidePanel6;
         private DevExpress.XtraEditors.SidePanel sidePanel5;
         private DevExpress.XtraEditors.SidePanel sidePanel4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton clearBTN;
+        private DevExpress.XtraEditors.SimpleButton deleteBTN;
+        private DevExpress.XtraEditors.SimpleButton updateBTN;
         private DevExpress.XtraEditors.SimpleButton addBTN;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit middlenameTE;
@@ -677,11 +709,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SidePanel sidePanel8;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraGrid.Columns.GridColumn Position;
         private DevExpress.XtraGrid.Columns.GridColumn EmployeeName;
         private DevExpress.XtraGrid.Columns.GridColumn ContactNo;
         private DevExpress.XtraGrid.Columns.GridColumn EmployeeStatus;
         private DevExpress.XtraGrid.Columns.GridColumn EmployeeID;
+        private DevExpress.XtraGrid.Columns.GridColumn Password;
     }
 }
