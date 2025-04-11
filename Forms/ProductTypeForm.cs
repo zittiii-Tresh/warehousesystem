@@ -16,7 +16,7 @@ namespace warehousesystem.Forms
 {
 	public partial class ProductTypeForm: DevExpress.XtraBars.Ribbon.RibbonForm
 	{
-        private static string connectionString = @"Data Source = LAPTOP-FC9GSM04\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+        private static string connectionString = @"Data Source = LAPTOP-NN71FQ8R\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
         public event EventHandler CategoryAdded;
        
         public ProductTypeForm()

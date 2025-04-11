@@ -18,7 +18,7 @@ namespace warehousesystem.Forms
 {
     public partial class EmployeeForm : DevExpress.XtraEditors.XtraUserControl
     {
-        private static string connectionString = @"Data Source = LAPTOP-FC9GSM04\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+        private static string connectionString = @"Data Source = LAPTOP-NN71FQ8R\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
         private string selectedEmployeeID;
         public EmployeeForm()
         {

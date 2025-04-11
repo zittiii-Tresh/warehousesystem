@@ -12,12 +12,13 @@ using System.Windows.Forms;
 using Dapper;
 using DevExpress.XtraEditors;
 using DevExpress.XtraSpellChecker.Parser;
+using warehousesystem.GlobalConnection;
 
 namespace warehousesystem.Forms
 {
     public partial class InventoryForm : DevExpress.XtraEditors.XtraUserControl
     {
-        private static string connectionString = @"Data Source = LAPTOP-FC9GSM04\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+        private static string GlobalConnection = ConnectionString.ConnString;
         internal MainForm MdiParent;
 
         public InventoryForm()
@@ -41,7 +42,7 @@ namespace warehousesystem.Forms
 
         public List<Model.Category> Category()
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(ConnectionString.ConnString))
             {
                 connection.Open();
 
@@ -78,7 +79,7 @@ namespace warehousesystem.Forms
 
         public List<Model.ProductLocation.AisleLocation> AisleLocation()
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
@@ -101,7 +102,7 @@ namespace warehousesystem.Forms
 
         public List<Model.ProductLocation.ContainerLocation> ContainerLocation()
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
@@ -124,7 +125,7 @@ namespace warehousesystem.Forms
 
         public List<Model.ProductLocation.ShelfLocation> ShelfLocation()
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
@@ -177,7 +178,7 @@ namespace warehousesystem.Forms
 
         private static void RegisterProductDetail(Model.Product products)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
@@ -233,7 +234,7 @@ namespace warehousesystem.Forms
 
         private static void RegisterProductLocation(Model.ProductLocation location, Model.ProductLocation.AisleLocation aisle, Model.ProductLocation.ContainerLocation container, Model.ProductLocation.ShelfLocation shelf)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
@@ -270,7 +271,7 @@ namespace warehousesystem.Forms
 
         private DataTable FilterAllProducts()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
                 string query = @"SELECT p.ProductID,
@@ -327,7 +328,7 @@ namespace warehousesystem.Forms
 
         public bool Update(string productID, string productName, int categoryID, int stocks, int lowStocklevel, double productPrice, string supplierName, string supplierNo, string locationID)
         {
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
                 var parameters = new
@@ -387,7 +388,7 @@ namespace warehousesystem.Forms
             {
                 string deleteId = (string)gvProducts.GetFocusedRowCellValue("ProductID");
 
-                using (var connection = new SqlConnection(connectionString))
+                using (var connection = new SqlConnection(GlobalConnection))
                 {
                     connection.Open();
 
