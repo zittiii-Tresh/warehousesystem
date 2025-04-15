@@ -35,13 +35,13 @@
             this.sidePanel9 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel8 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel2 = new DevExpress.XtraEditors.SidePanel();
+            this.clearBTN = new DevExpress.XtraEditors.SimpleButton();
             this.suppliernoTE = new DevExpress.XtraEditors.TextEdit();
             this.suppliernameTE = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.producttypeaddBTN = new DevExpress.XtraEditors.SimpleButton();
             this.productidTE = new DevExpress.XtraEditors.TextEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.clearBTN = new DevExpress.XtraEditors.SimpleButton();
             this.deleteBTN = new DevExpress.XtraEditors.SimpleButton();
             this.updateBTN = new DevExpress.XtraEditors.SimpleButton();
             this.addBTN = new DevExpress.XtraEditors.SimpleButton();
@@ -75,11 +75,11 @@
             this.ProductPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SupplierName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SupplierNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LowStockLevel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel4 = new DevExpress.XtraEditors.SidePanel();
-            this.LowStockLevel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.suppliernoTE.Properties)).BeginInit();
@@ -204,13 +204,28 @@
             this.sidePanel2.TabIndex = 30;
             this.sidePanel2.Text = "sidePanel2";
             // 
+            // clearBTN
+            // 
+            this.clearBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.clearBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.clearBTN.Appearance.Options.UseBackColor = true;
+            this.clearBTN.Appearance.Options.UseBorderColor = true;
+            this.clearBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("clearBTN.ImageOptions.Image")));
+            this.clearBTN.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.clearBTN.ImageOptions.SvgImageSize = new System.Drawing.Size(33, 33);
+            this.clearBTN.Location = new System.Drawing.Point(301, 612);
+            this.clearBTN.Name = "clearBTN";
+            this.clearBTN.Size = new System.Drawing.Size(43, 41);
+            this.clearBTN.TabIndex = 78;
+            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
+            // 
             // suppliernoTE
             // 
             this.suppliernoTE.Location = new System.Drawing.Point(156, 375);
             this.suppliernoTE.Name = "suppliernoTE";
             this.suppliernoTE.Properties.AutoHeight = false;
             this.suppliernoTE.Size = new System.Drawing.Size(173, 26);
-            this.suppliernoTE.TabIndex = 84;
+            this.suppliernoTE.TabIndex = 87;
             // 
             // suppliernameTE
             // 
@@ -218,7 +233,7 @@
             this.suppliernameTE.Name = "suppliernameTE";
             this.suppliernameTE.Properties.AutoHeight = false;
             this.suppliernameTE.Size = new System.Drawing.Size(173, 26);
-            this.suppliernameTE.TabIndex = 83;
+            this.suppliernameTE.TabIndex = 86;
             // 
             // labelControl8
             // 
@@ -267,33 +282,18 @@
             this.labelControl14.TabIndex = 79;
             this.labelControl14.Text = "Product ID:";
             // 
-            // clearBTN
-            // 
-            this.clearBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.clearBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
-            this.clearBTN.Appearance.Options.UseBackColor = true;
-            this.clearBTN.Appearance.Options.UseBorderColor = true;
-            this.clearBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("clearBTN.ImageOptions.Image")));
-            this.clearBTN.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.clearBTN.ImageOptions.SvgImageSize = new System.Drawing.Size(33, 33);
-            this.clearBTN.Location = new System.Drawing.Point(301, 612);
-            this.clearBTN.Name = "clearBTN";
-            this.clearBTN.Size = new System.Drawing.Size(43, 41);
-            this.clearBTN.TabIndex = 78;
-            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
-            // 
             // deleteBTN
             // 
             this.deleteBTN.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.deleteBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.deleteBTN.Appearance.Options.UseBackColor = true;
             this.deleteBTN.Appearance.Options.UseBorderColor = true;
-            this.deleteBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.deleteBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteBTN.ImageOptions.Image")));
             this.deleteBTN.Location = new System.Drawing.Point(212, 613);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
             this.deleteBTN.Size = new System.Drawing.Size(89, 40);
-            this.deleteBTN.TabIndex = 77;
+            this.deleteBTN.TabIndex = 93;
             this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // updateBTN
@@ -302,11 +302,11 @@
             this.updateBTN.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.updateBTN.Appearance.Options.UseBackColor = true;
             this.updateBTN.Appearance.Options.UseBorderColor = true;
-            this.updateBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.updateBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("updateBTN.ImageOptions.Image")));
             this.updateBTN.Location = new System.Drawing.Point(121, 613);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(89, 40);
-            this.updateBTN.TabIndex = 76;
+            this.updateBTN.TabIndex = 92;
             this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // addBTN
@@ -319,7 +319,7 @@
             this.addBTN.Location = new System.Drawing.Point(28, 613);
             this.addBTN.Name = "addBTN";
             this.addBTN.Size = new System.Drawing.Size(90, 40);
-            this.addBTN.TabIndex = 75;
+            this.addBTN.TabIndex = 91;
             this.addBTN.Click += new System.EventHandler(this.addBTN_Click);
             // 
             // shelfLUE
@@ -335,7 +335,7 @@
             this.shelfLUE.Properties.NullText = "";
             this.shelfLUE.Properties.ValueMember = "Shelf";
             this.shelfLUE.Size = new System.Drawing.Size(83, 26);
-            this.shelfLUE.TabIndex = 74;
+            this.shelfLUE.TabIndex = 90;
             // 
             // containerLUE
             // 
@@ -350,7 +350,7 @@
             this.containerLUE.Properties.NullText = "";
             this.containerLUE.Properties.ValueMember = "Container";
             this.containerLUE.Size = new System.Drawing.Size(83, 26);
-            this.containerLUE.TabIndex = 73;
+            this.containerLUE.TabIndex = 89;
             // 
             // aisleLUE
             // 
@@ -365,7 +365,7 @@
             this.aisleLUE.Properties.NullText = "";
             this.aisleLUE.Properties.ValueMember = "Aisle";
             this.aisleLUE.Size = new System.Drawing.Size(83, 26);
-            this.aisleLUE.TabIndex = 72;
+            this.aisleLUE.TabIndex = 88;
             // 
             // labelControl12
             // 
@@ -421,7 +421,7 @@
             this.productpriceTE.Name = "productpriceTE";
             this.productpriceTE.Properties.AutoHeight = false;
             this.productpriceTE.Size = new System.Drawing.Size(173, 26);
-            this.productpriceTE.TabIndex = 65;
+            this.productpriceTE.TabIndex = 85;
             // 
             // lowstocklevelTE
             // 
@@ -429,7 +429,7 @@
             this.lowstocklevelTE.Name = "lowstocklevelTE";
             this.lowstocklevelTE.Properties.AutoHeight = false;
             this.lowstocklevelTE.Size = new System.Drawing.Size(173, 26);
-            this.lowstocklevelTE.TabIndex = 64;
+            this.lowstocklevelTE.TabIndex = 84;
             // 
             // stocksTE
             // 
@@ -437,7 +437,7 @@
             this.stocksTE.Name = "stocksTE";
             this.stocksTE.Properties.AutoHeight = false;
             this.stocksTE.Size = new System.Drawing.Size(173, 26);
-            this.stocksTE.TabIndex = 63;
+            this.stocksTE.TabIndex = 83;
             // 
             // productnameTE
             // 
@@ -445,7 +445,7 @@
             this.productnameTE.Name = "productnameTE";
             this.productnameTE.Properties.AutoHeight = false;
             this.productnameTE.Size = new System.Drawing.Size(173, 26);
-            this.productnameTE.TabIndex = 61;
+            this.productnameTE.TabIndex = 81;
             // 
             // labelControl7
             // 
@@ -533,7 +533,7 @@
             this.producttypeLUE.Properties.NullText = "";
             this.producttypeLUE.Properties.ValueMember = "CategoryID";
             this.producttypeLUE.Size = new System.Drawing.Size(173, 26);
-            this.producttypeLUE.TabIndex = 62;
+            this.producttypeLUE.TabIndex = 82;
             // 
             // sidePanel3
             // 
@@ -576,6 +576,7 @@
             this.gvProducts.GridControl = this.gcProducts;
             this.gvProducts.Name = "gvProducts";
             this.gvProducts.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvProducts_RowClick);
+            this.gvProducts.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvProducts_RowCellStyle);
             // 
             // ProductID
             // 
@@ -766,6 +767,14 @@
             this.SupplierNo.VisibleIndex = 8;
             this.SupplierNo.Width = 179;
             // 
+            // LowStockLevel
+            // 
+            this.LowStockLevel.Caption = "LowStockLevel";
+            this.LowStockLevel.FieldName = "LowStockLevel";
+            this.LowStockLevel.MinWidth = 25;
+            this.LowStockLevel.Name = "LowStockLevel";
+            this.LowStockLevel.Width = 94;
+            // 
             // sidePanel7
             // 
             this.sidePanel7.AllowResize = false;
@@ -809,14 +818,6 @@
             this.sidePanel4.Size = new System.Drawing.Size(1081, 51);
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
-            // 
-            // LowStockLevel
-            // 
-            this.LowStockLevel.Caption = "LowStockLevel";
-            this.LowStockLevel.FieldName = "LowStockLevel";
-            this.LowStockLevel.MinWidth = 25;
-            this.LowStockLevel.Name = "LowStockLevel";
-            this.LowStockLevel.Width = 94;
             // 
             // InventoryForm
             // 

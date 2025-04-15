@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSpellChecker.Parser;
 
 namespace warehousesystem.Forms
@@ -172,6 +173,7 @@ namespace warehousesystem.Forms
 
             RegisterProductLocation(productLocation,aisle,container,shelf);
             XtraMessageBox.Show("Product Added Successfully!");
+            gcProducts.DataSource = FilterAllProducts();
 
         }
 
@@ -288,7 +290,14 @@ namespace warehousesystem.Forms
                             LEFT JOIN pro.ProductCategory pc
                             ON pc.CategoryID = p.CategoryID
                             LEFT JOIN pro.ProductLocation pl
-                            ON pl.ProductID = p.ProductID";
+                            ON pl.ProductID = p.ProductID
+                            ORDER BY 
+                            CASE p.StockStatus
+                                WHEN 'Out of Stock' THEN 0
+                                WHEN 'Low Stock' THEN 1
+                                WHEN 'In Stock' THEN 2
+                                ELSE 3
+                            END";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -405,6 +414,31 @@ namespace warehousesystem.Forms
             else
             {
                 XtraMessageBox.Show("Delete action canceled.", "Canceled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void gvProducts_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string stockStatus = view.GetRowCellValue(e.RowHandle, "StockStatus").ToString();
+
+                if (stockStatus == "In Stock")
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                    e.Appearance.ForeColor = Color.Black;
+                }
+                else if (stockStatus == "Low Stock")
+                {
+                    e.Appearance.BackColor = Color.Orange;
+                    e.Appearance.ForeColor = Color.Black;
+                }
+                else if (stockStatus == "Out of Stock")
+                {
+                    e.Appearance.BackColor = Color.IndianRed;
+                    e.Appearance.ForeColor = Color.White;
+                }
             }
         }
     }
