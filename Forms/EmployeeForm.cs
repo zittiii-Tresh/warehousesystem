@@ -12,13 +12,33 @@ using Dapper;
 using DevExpress.XtraEditors;
 using DevExpress.XtraPrinting.Native;
 using DevExpress.XtraSpellChecker.Parser;
+using warehousesystem.GlobalConnection;
 using warehousesystem.Model;
 
 namespace warehousesystem.Forms
 {
     public partial class EmployeeForm : DevExpress.XtraEditors.XtraUserControl
     {
-        private static string connectionString = @"Data Source = LAPTOP-NN71FQ8R\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+    string empquery = @"SELECT [EmployeeID],
+                                    [PositionID],
+                                    [FirstName],
+                                    [MiddleName],
+                                    [LastName],
+                                    [NameExtension],
+                                    FirstName + ' ' + 
+                                            CASE 
+                                                WHEN MiddleName = ' ' THEN LastName + ' ' + NameExtension
+                                                WHEN MiddleName IS NOT NULL THEN LEFT(MiddleName,1) + '. ' + LastName + ' ' + NameExtension 
+                                                ELSE LastName + ' ' + NameExtension
+                                            END AS 'EmployeeName',
+                                    [EmployeeStatus],
+                                    [ContactNo],
+                                    [RecordNumber],
+                                    [Password]
+                                FROM [SmartWareHouseDB].[emp].[Employee]
+                                ORDER BY RecordNumber";
+
+        private static string connectionString = ConnectionString.ConnString;
         private string selectedEmployeeID;
         public EmployeeForm()
         {
@@ -28,38 +48,39 @@ namespace warehousesystem.Forms
         }
         private DataTable FilterAllEmployees()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = @"SELECT [EmployeeID],
-                                        [PositionID],
-                                        [FirstName],
-                                        [MiddleName],
-                                        [LastName],
-                                        [NameExtension],
-                                        FirstName + ' ' + 
-                                               CASE 
-                                                   WHEN MiddleName = ' ' THEN LastName + ' ' + NameExtension
-                                                   WHEN MiddleName IS NOT NULL THEN LEFT(MiddleName,1) + '. ' + LastName + ' ' + NameExtension 
-                                                   ELSE LastName + ' ' + NameExtension
-                                               END AS 'EmployeeName',
-                                        [EmployeeStatus],
-                                        [ContactNo],
-                                        [RecordNumber],
-                                        [Password]
-                                    FROM [SmartWareHouseDB].[emp].[Employee]
-                                    ORDER BY RecordNumber";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        gcEmployee.DataSource = dataTable;
-                        return dataTable;
-                    }
-                }
-            }
+            //using (SqlConnection connection = new SqlConnection(connectionString))
+            //{
+            //    connection.Open();
+            //    string query = @"SELECT [EmployeeID],
+            //                            [PositionID],
+            //                            [FirstName],
+            //                            [MiddleName],
+            //                            [LastName],
+            //                            [NameExtension],
+            //                            FirstName + ' ' + 
+            //                                   CASE 
+            //                                       WHEN MiddleName = ' ' THEN LastName + ' ' + NameExtension
+            //                                       WHEN MiddleName IS NOT NULL THEN LEFT(MiddleName,1) + '. ' + LastName + ' ' + NameExtension 
+            //                                       ELSE LastName + ' ' + NameExtension
+            //                                   END AS 'EmployeeName',
+            //                            [EmployeeStatus],
+            //                            [ContactNo],
+            //                            [RecordNumber],
+            //                            [Password]
+            //                        FROM [SmartWareHouseDB].[emp].[Employee]
+            //                        ORDER BY RecordNumber";
+            //    using (SqlCommand command = new SqlCommand(query, connection))
+            //    {
+            //        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+            //        {
+            //            DataTable dataTable = new DataTable();
+            //            adapter.Fill(dataTable);
+            //            gcEmployee.DataSource = dataTable;
+            //            return dataTable;
+            //        }
+            //    }
+            //}
+            return GlobalFunction.FillTable(gcEmployee, empquery);
         }
         public string GenerateID(string position, int recordNumber)
         {

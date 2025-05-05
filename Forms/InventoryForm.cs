@@ -20,7 +20,7 @@ namespace warehousesystem.Forms
     public partial class InventoryForm : DevExpress.XtraEditors.XtraUserControl
     {
         private static string GlobalConnection = ConnectionString.ConnString;
-        internal MainForm MdiParent;
+        //internal MainForm MdiParent;
 
         public InventoryForm()
         {
@@ -148,6 +148,11 @@ namespace warehousesystem.Forms
 
         private void addBTN_Click(object sender, EventArgs e)
         {
+            if (IsProductIdExist(productidTE.Text))
+            {
+                XtraMessageBox.Show("ProductID already exists. Please use a unique ProductID.", "Duplicate ProductID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; 
+            }
             Model.Product products = new Model.Product();
             products.ProductID = productidTE.Text;
             products.ProductName = productnameTE.Text;
@@ -176,6 +181,27 @@ namespace warehousesystem.Forms
             XtraMessageBox.Show("Product Added Successfully!");
             gcProducts.DataSource = FilterAllProducts();
 
+            gcProducts.DataSource = FilterAllProducts();
+
+            productidTE.Text = string.Empty;
+            productnameTE.Text = string.Empty;
+            stocksTE.Text = string.Empty;
+            lowstocklevelTE.Text = string.Empty;
+            productpriceTE.Text = string.Empty;
+            suppliernameTE.Text = string.Empty;
+            suppliernoTE.Text = string.Empty;
+
+            producttypeLUE.EditValue = null;
+            producttypeLUE.Text = string.Empty;
+
+            aisleLUE.EditValue = null;
+            aisleLUE.Text = string.Empty;
+
+            containerLUE.EditValue = null;
+            containerLUE.Text = string.Empty;
+
+            shelfLUE.EditValue = null;
+            shelfLUE.Text = string.Empty;
         }
 
         private static void RegisterProductDetail(Model.Product products)
@@ -236,7 +262,7 @@ namespace warehousesystem.Forms
 
         private static void RegisterProductLocation(Model.ProductLocation location, Model.ProductLocation.AisleLocation aisle, Model.ProductLocation.ContainerLocation container, Model.ProductLocation.ShelfLocation shelf)
         {
-            using (var connection = new SqlConnection(GlobalConnection))
+            using (var connection = new SqlConnection(GlobalConnection)) 
             {
                 connection.Open();
 
@@ -442,6 +468,20 @@ namespace warehousesystem.Forms
                 }
             }
         }
+
+        private bool IsProductIdExist(string productId)
+        {
+            using (var connection = new SqlConnection(GlobalConnection))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(1) FROM pro.Product WHERE ProductID = @ProductID";
+
+                int count = connection.ExecuteScalar<int>(query, new { ProductID = productId });
+
+                return count > 0;
+            }
+        }
+
     }
 }
 

@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using warehousesystem.GlobalConnection;
+using warehousesystem.Model;
 
 namespace warehousesystem.Forms
 {
     public partial class Staff : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private static string connectionString = @"Data Source = LAPTOP-NN71FQ8R\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+        private static string connectionString = ConnectionString.ConnString;
         public Staff()
         {
             InitializeComponent();
@@ -27,22 +29,11 @@ namespace warehousesystem.Forms
         }
         private DataTable ListOfProduct()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = @"
+
+            string query = @"
                 EXEC EmployeeProductDetails;";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-                        gcProduct.DataSource = dataTable;
-                        return dataTable;
-                    }
-                }
-            }
+
+            return GlobalFunction.FillTable(gcProduct, query);
         }
 
         private void teProductKeyword_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)

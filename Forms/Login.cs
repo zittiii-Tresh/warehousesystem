@@ -12,12 +12,13 @@ using System.Windows.Forms;
 using Dapper;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using warehousesystem.GlobalConnection;
 
 namespace warehousesystem.Forms
 {
     public partial class Login : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private static string connectionString = @"Data Source = LAPTOP-NN71FQ8R\SQLEXPRESS;Initial Catalog = SmartWareHouseDB;Integrated Security = True;";
+        private static string connectionString = ConnectionString.ConnString;
         public Login()
         {
             InitializeComponent();
@@ -36,8 +37,7 @@ namespace warehousesystem.Forms
             string employeeID = textEditUserName.Text.Trim();
             string password = textEditPassword.Text.Trim();
 
-            // Validate input
-            if (string.IsNullOrWhiteSpace(textEditUserName.Text) || string.IsNullOrWhiteSpace(textEditPassword.Text))
+            if (string.IsNullOrWhiteSpace(employeeID) || string.IsNullOrWhiteSpace(password))
             {
                 XtraMessageBox.Show("Please enter username and password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -47,25 +47,38 @@ namespace warehousesystem.Forms
             {
                 connection.Open();
 
-                string query = "SELECT COUNT(*) FROM emp.Employee WHERE employeeID = @EmployeeID AND password = @Password";
-                int userExists = connection.ExecuteScalar<int>(query, new
+                string query = "SELECT PositionID FROM emp.Employee WHERE employeeID = @EmployeeID AND password = @Password";
+                var positionID = connection.ExecuteScalar<int?>(query, new
                 {
                     EmployeeID = employeeID,
                     Password = password
                 });
 
-                if (userExists > 0)
+                if (positionID.HasValue)
                 {
-                    XtraMessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    switch (positionID.Value)
+                    {
+                        case 1:
+                            new MainForm().Show();
+                            break;
+                        case 2:
+                            new Staff().Show(); // Replace with your actual staff form
+                            break;
+                        case 3:
+                            new CashierForm().Show();
+                            break;
+                        default:
+                            XtraMessageBox.Show("Unknown position ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                    }
 
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
+                    //this.Hide(); // Optional: hide the login form
                 }
                 else
                 {
                     XtraMessageBox.Show("Invalid username or password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } 
+            }
         }
 
         private void textEditPassword_ButtonPressed(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -91,6 +104,16 @@ namespace warehousesystem.Forms
         {
             CashierForm cashier = new CashierForm();
             cashier.Show();
+        }
+
+        private void textEditPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoginBTN_Click(sender, e); // Call your login logic
+                e.Handled = true;
+                e.SuppressKeyPress = true; // Prevents beep sound
+            }
         }
     }
 }
