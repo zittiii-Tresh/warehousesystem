@@ -113,6 +113,7 @@
     </Compile>
     <Compile Include="GlobalConnection\ConnectionString.cs" />
     <Compile Include="GlobalConnection\GlobalFunction.cs" />
+    <Compile Include="GlobalConnection\GlobalFunctionInventory.cs" />
     <Compile Include="Model\ProductLocation.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Employee.cs" />

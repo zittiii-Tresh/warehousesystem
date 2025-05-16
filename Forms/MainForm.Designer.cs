@@ -71,6 +71,7 @@
             this.cashierBTN.Size = new System.Drawing.Size(87, 112);
             this.cashierBTN.TabIndex = 6;
             this.cashierBTN.Text = "POS";
+            this.cashierBTN.Click += new System.EventHandler(this.cashierBTN_Click);
             // 
             // salesBTN
             // 
