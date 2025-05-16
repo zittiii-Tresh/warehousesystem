@@ -20,7 +20,6 @@ namespace warehousesystem.Forms
     public partial class InventoryForm : DevExpress.XtraEditors.XtraUserControl
     {
         private static string GlobalConnection = ConnectionString.ConnString;
-        //internal MainForm MdiParent;
 
         public InventoryForm()
         {
@@ -402,6 +401,8 @@ namespace warehousesystem.Forms
             if (isUpdated)
             {
                 gcProducts.DataSource = FilterAllProducts();
+                gvProducts.RefreshData();    
+                gvProducts.Invalidate();     
                 XtraMessageBox.Show("Product Successfully Updated!");
             }
             else
@@ -437,6 +438,8 @@ namespace warehousesystem.Forms
                 }
 
                 gcProducts.DataSource = FilterAllProducts();
+                gvProducts.RefreshData();
+                gvProducts.Invalidate(); 
             }
             else
             {
@@ -468,7 +471,6 @@ namespace warehousesystem.Forms
                 }
             }
         }
-
         private bool IsProductIdExist(string productId)
         {
             using (var connection = new SqlConnection(GlobalConnection))
@@ -481,7 +483,6 @@ namespace warehousesystem.Forms
                 return count > 0;
             }
         }
-
     }
 }
 

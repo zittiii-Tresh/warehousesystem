@@ -890,7 +890,6 @@
         private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraEditors.SidePanel sidePanel9;
         private DevExpress.XtraEditors.SidePanel sidePanel8;
-        private DevExpress.XtraEditors.TextEdit productidTE;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.SimpleButton producttypeaddBTN;
         private DevExpress.XtraEditors.LabelControl labelControl8;
@@ -905,5 +904,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn SupplierNo;
         private DevExpress.XtraGrid.Columns.GridColumn LocationID;
         private DevExpress.XtraGrid.Columns.GridColumn LowStockLevel;
+        public DevExpress.XtraEditors.TextEdit productidTE;
     }
 }

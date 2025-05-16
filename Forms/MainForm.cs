@@ -44,5 +44,16 @@ namespace warehousesystem.Forms
 
             mainPC.Controls.Add(employeeControl);
         }
+
+        private void cashierBTN_Click(object sender, EventArgs e)
+        {
+            CashierForm cashierControl = new CashierForm();
+            cashierControl.Dock = DockStyle.Fill;
+            cashierControl.Show();
+
+
+        }
+
+
     }
 }
