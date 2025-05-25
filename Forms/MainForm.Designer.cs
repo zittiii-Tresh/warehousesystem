@@ -55,8 +55,9 @@
             this.sidePanel1.Controls.Add(this.sidePanel2);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel1.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(88, 987);
+            this.sidePanel1.Size = new System.Drawing.Size(75, 802);
             this.sidePanel1.TabIndex = 0;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -66,9 +67,10 @@
             this.cashierBTN.Appearance.Options.UseBackColor = true;
             this.cashierBTN.Dock = System.Windows.Forms.DockStyle.Top;
             this.cashierBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cashierBTN.ImageOptions.Image")));
-            this.cashierBTN.Location = new System.Drawing.Point(0, 799);
+            this.cashierBTN.Location = new System.Drawing.Point(0, 649);
+            this.cashierBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cashierBTN.Name = "cashierBTN";
-            this.cashierBTN.Size = new System.Drawing.Size(87, 112);
+            this.cashierBTN.Size = new System.Drawing.Size(74, 91);
             this.cashierBTN.TabIndex = 6;
             this.cashierBTN.Text = "POS";
             this.cashierBTN.Click += new System.EventHandler(this.cashierBTN_Click);
@@ -79,9 +81,10 @@
             this.salesBTN.Appearance.Options.UseBackColor = true;
             this.salesBTN.Dock = System.Windows.Forms.DockStyle.Top;
             this.salesBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("salesBTN.ImageOptions.Image")));
-            this.salesBTN.Location = new System.Drawing.Point(0, 687);
+            this.salesBTN.Location = new System.Drawing.Point(0, 558);
+            this.salesBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.salesBTN.Name = "salesBTN";
-            this.salesBTN.Size = new System.Drawing.Size(87, 112);
+            this.salesBTN.Size = new System.Drawing.Size(74, 91);
             this.salesBTN.TabIndex = 5;
             this.salesBTN.Text = "Sales";
             // 
@@ -91,9 +94,10 @@
             this.employeeBTN.Appearance.Options.UseBackColor = true;
             this.employeeBTN.Dock = System.Windows.Forms.DockStyle.Top;
             this.employeeBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("employeeBTN.ImageOptions.Image")));
-            this.employeeBTN.Location = new System.Drawing.Point(0, 575);
+            this.employeeBTN.Location = new System.Drawing.Point(0, 467);
+            this.employeeBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeeBTN.Name = "employeeBTN";
-            this.employeeBTN.Size = new System.Drawing.Size(87, 112);
+            this.employeeBTN.Size = new System.Drawing.Size(74, 91);
             this.employeeBTN.TabIndex = 4;
             this.employeeBTN.Text = "Employees";
             this.employeeBTN.Click += new System.EventHandler(this.employeeBTN_Click);
@@ -104,9 +108,10 @@
             this.inventoryBTN.Appearance.Options.UseBackColor = true;
             this.inventoryBTN.Dock = System.Windows.Forms.DockStyle.Top;
             this.inventoryBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryBTN.ImageOptions.Image")));
-            this.inventoryBTN.Location = new System.Drawing.Point(0, 463);
+            this.inventoryBTN.Location = new System.Drawing.Point(0, 376);
+            this.inventoryBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.inventoryBTN.Name = "inventoryBTN";
-            this.inventoryBTN.Size = new System.Drawing.Size(87, 112);
+            this.inventoryBTN.Size = new System.Drawing.Size(74, 91);
             this.inventoryBTN.TabIndex = 5;
             this.inventoryBTN.Text = "Inventory";
             this.inventoryBTN.Click += new System.EventHandler(this.inventoryBTN_Click);
@@ -131,9 +136,10 @@
             this.dashboardBTN.AppearancePressed.Options.UseBorderColor = true;
             this.dashboardBTN.Dock = System.Windows.Forms.DockStyle.Top;
             this.dashboardBTN.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dashboardBTN.ImageOptions.Image")));
-            this.dashboardBTN.Location = new System.Drawing.Point(0, 351);
+            this.dashboardBTN.Location = new System.Drawing.Point(0, 285);
+            this.dashboardBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboardBTN.Name = "dashboardBTN";
-            this.dashboardBTN.Size = new System.Drawing.Size(87, 112);
+            this.dashboardBTN.Size = new System.Drawing.Size(74, 91);
             this.dashboardBTN.TabIndex = 1;
             this.dashboardBTN.Text = "Dashboard";
             // 
@@ -145,9 +151,10 @@
             this.exitBTN.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.BottomCenter;
             this.exitBTN.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("exitBTN.ImageOptions.SvgImage")));
             this.exitBTN.ImageOptions.SvgImageSize = new System.Drawing.Size(24, 24);
-            this.exitBTN.Location = new System.Drawing.Point(0, 917);
+            this.exitBTN.Location = new System.Drawing.Point(0, 745);
+            this.exitBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.exitBTN.Name = "exitBTN";
-            this.exitBTN.Size = new System.Drawing.Size(87, 70);
+            this.exitBTN.Size = new System.Drawing.Size(74, 57);
             this.exitBTN.TabIndex = 1;
             this.exitBTN.Click += new System.EventHandler(this.exitBTN_Click);
             // 
@@ -160,28 +167,31 @@
             this.sidePanel2.BorderThickness = 0;
             this.sidePanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel2.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel2.Name = "sidePanel2";
-            this.sidePanel2.Size = new System.Drawing.Size(87, 351);
+            this.sidePanel2.Size = new System.Drawing.Size(74, 285);
             this.sidePanel2.TabIndex = 0;
             this.sidePanel2.Text = "sidePanel2";
             // 
             // mainPC
             // 
             this.mainPC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPC.Location = new System.Drawing.Point(88, 0);
+            this.mainPC.Location = new System.Drawing.Point(75, 0);
+            this.mainPC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mainPC.Name = "mainPC";
-            this.mainPC.Size = new System.Drawing.Size(1427, 987);
+            this.mainPC.Size = new System.Drawing.Size(1224, 802);
             this.mainPC.TabIndex = 1;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1515, 987);
+            this.ClientSize = new System.Drawing.Size(1299, 802);
             this.Controls.Add(this.mainPC);
             this.Controls.Add(this.sidePanel1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MainForm.IconOptions.Image")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
