@@ -87,6 +87,7 @@
             this.salesBTN.Size = new System.Drawing.Size(74, 91);
             this.salesBTN.TabIndex = 5;
             this.salesBTN.Text = "Sales";
+            this.salesBTN.Click += new System.EventHandler(this.salesBTN_Click);
             // 
             // employeeBTN
             // 

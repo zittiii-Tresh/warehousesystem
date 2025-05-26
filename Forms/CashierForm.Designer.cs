@@ -1,4 +1,4 @@
-﻿namespace warehousesystem.Forms
+namespace warehousesystem.Forms
 {
     partial class CashierForm
     {
@@ -69,9 +69,6 @@
             this.lblTotalAmount = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
-            this.sidePanel11 = new DevExpress.XtraEditors.SidePanel();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.sidePanel10 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
             this.confirmBTN = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -99,7 +96,6 @@
             this.sidePanel6.SuspendLayout();
             this.sidePanel8.SuspendLayout();
             this.sidePanel5.SuspendLayout();
-            this.sidePanel11.SuspendLayout();
             this.sidePanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -194,12 +190,12 @@
             // POSSplitControl
             // 
             this.POSSplitControl.Collapsed = true;
-            this.POSSplitControl.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
+            this.POSSplitControl.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
             this.POSSplitControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.POSSplitControl.Location = new System.Drawing.Point(0, 81);
             this.POSSplitControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.POSSplitControl.Name = "POSSplitControl";
-            this.POSSplitControl.Padding = new System.Windows.Forms.Padding(10);
+            this.POSSplitControl.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             // 
             // POSSplitControl.Panel1
             // 
@@ -229,7 +225,7 @@
             this.gcProducts.MainView = this.gvProducts;
             this.gcProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gcProducts.Name = "gcProducts";
-            this.gcProducts.Size = new System.Drawing.Size(0, 0);
+            this.gcProducts.Size = new System.Drawing.Size(1037, 475);
             this.gcProducts.TabIndex = 1;
             this.gcProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProducts});
@@ -356,7 +352,7 @@
             this.sidePanel4.Location = new System.Drawing.Point(0, 0);
             this.sidePanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel4.Name = "sidePanel4";
-            this.sidePanel4.Size = new System.Drawing.Size(0, 78);
+            this.sidePanel4.Size = new System.Drawing.Size(1037, 78);
             this.sidePanel4.TabIndex = 0;
             this.sidePanel4.Text = "sidePanel4";
             // 
@@ -365,29 +361,24 @@
             this.sidePanel9.BorderThickness = 0;
             this.sidePanel9.Controls.Add(this.btnAddToCart);
             this.sidePanel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel9.Location = new System.Drawing.Point(-138, 0);
+            this.sidePanel9.Location = new System.Drawing.Point(887, 0);
             this.sidePanel9.Name = "sidePanel9";
-            this.sidePanel9.Size = new System.Drawing.Size(138, 75);
+            this.sidePanel9.Size = new System.Drawing.Size(150, 75);
             this.sidePanel9.TabIndex = 3;
             this.sidePanel9.Text = "sidePanel9";
             // 
             // btnAddToCart
             // 
-            this.btnAddToCart.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
+            this.btnAddToCart.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(128)))), ((int)(((byte)(51)))));
             this.btnAddToCart.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnAddToCart.Appearance.Options.UseBackColor = true;
             this.btnAddToCart.Appearance.Options.UseFont = true;
-            this.btnAddToCart.AppearancePressed.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddToCart.AppearancePressed.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAddToCart.AppearancePressed.Options.UseBackColor = true;
-            this.btnAddToCart.AppearancePressed.Options.UseBorderColor = true;
-            this.btnAddToCart.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnAddToCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddToCart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAddToCart.ImageOptions.Image")));
-            this.btnAddToCart.Location = new System.Drawing.Point(0, 0);
+            this.btnAddToCart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnAddToCart.ImageOptions.SvgImage")));
+            this.btnAddToCart.Location = new System.Drawing.Point(31, 21);
             this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new System.Drawing.Size(138, 75);
+            this.btnAddToCart.Size = new System.Drawing.Size(99, 34);
             this.btnAddToCart.TabIndex = 2;
+            this.btnAddToCart.Text = "ADD ";
             this.btnAddToCart.Click += new System.EventHandler(this.btnAddToCart_Click);
             // 
             // textEdit1
@@ -422,7 +413,7 @@
             this.gcProductSales.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonCancel,
             this.repositoryItemSpinEditQuantity});
-            this.gcProductSales.Size = new System.Drawing.Size(1037, 408);
+            this.gcProductSales.Size = new System.Drawing.Size(0, 0);
             this.gcProductSales.TabIndex = 2;
             this.gcProductSales.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvProductSales});
@@ -551,10 +542,10 @@
             this.sidePanel6.Appearance.Options.UseBackColor = true;
             this.sidePanel6.Controls.Add(this.sidePanel8);
             this.sidePanel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.sidePanel6.Location = new System.Drawing.Point(0, 486);
+            this.sidePanel6.Location = new System.Drawing.Point(0, -67);
             this.sidePanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel6.Name = "sidePanel6";
-            this.sidePanel6.Size = new System.Drawing.Size(1037, 67);
+            this.sidePanel6.Size = new System.Drawing.Size(0, 67);
             this.sidePanel6.TabIndex = 1;
             this.sidePanel6.Text = "sidePanel6";
             // 
@@ -567,7 +558,7 @@
             this.sidePanel8.Controls.Add(this.lblTotalAmount);
             this.sidePanel8.Controls.Add(this.labelControl4);
             this.sidePanel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel8.Location = new System.Drawing.Point(746, 1);
+            this.sidePanel8.Location = new System.Drawing.Point(-291, 1);
             this.sidePanel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel8.Name = "sidePanel8";
             this.sidePanel8.Size = new System.Drawing.Size(291, 66);
@@ -602,50 +593,14 @@
             this.sidePanel5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(233)))));
             this.sidePanel5.Appearance.Options.UseBackColor = true;
             this.sidePanel5.BorderThickness = 3;
-            this.sidePanel5.Controls.Add(this.sidePanel11);
-            this.sidePanel5.Controls.Add(this.sidePanel10);
             this.sidePanel5.Controls.Add(this.sidePanel7);
             this.sidePanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.sidePanel5.Location = new System.Drawing.Point(0, 0);
             this.sidePanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel5.Name = "sidePanel5";
-            this.sidePanel5.Size = new System.Drawing.Size(1037, 78);
+            this.sidePanel5.Size = new System.Drawing.Size(0, 78);
             this.sidePanel5.TabIndex = 0;
             this.sidePanel5.Text = "sidePanel5";
-            // 
-            // sidePanel11
-            // 
-            this.sidePanel11.BorderThickness = 0;
-            this.sidePanel11.Controls.Add(this.labelControl2);
-            this.sidePanel11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel11.Location = new System.Drawing.Point(71, 0);
-            this.sidePanel11.Name = "sidePanel11";
-            this.sidePanel11.Size = new System.Drawing.Size(141, 75);
-            this.sidePanel11.TabIndex = 3;
-            this.sidePanel11.Text = "sidePanel11";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(6, 29);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(109, 21);
-            this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "ADD TO CART";
-            // 
-            // sidePanel10
-            // 
-            this.sidePanel10.AllowResize = false;
-            this.sidePanel10.BackgroundImage = global::warehousesystem.Properties.Resources.Untitled_design__3_;
-            this.sidePanel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.sidePanel10.BorderThickness = 0;
-            this.sidePanel10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel10.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel10.Name = "sidePanel10";
-            this.sidePanel10.Size = new System.Drawing.Size(71, 75);
-            this.sidePanel10.TabIndex = 2;
-            this.sidePanel10.Text = "sidePanel10";
             // 
             // sidePanel7
             // 
@@ -655,7 +610,7 @@
             this.sidePanel7.BorderThickness = 0;
             this.sidePanel7.Controls.Add(this.confirmBTN);
             this.sidePanel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel7.Location = new System.Drawing.Point(875, 0);
+            this.sidePanel7.Location = new System.Drawing.Point(-162, 0);
             this.sidePanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sidePanel7.Name = "sidePanel7";
             this.sidePanel7.Size = new System.Drawing.Size(162, 75);
@@ -670,7 +625,7 @@
             this.confirmBTN.Appearance.Options.UseFont = true;
             this.confirmBTN.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(227)))), ((int)(((byte)(190)))));
             this.confirmBTN.AppearanceHovered.Options.UseBackColor = true;
-            this.confirmBTN.Location = new System.Drawing.Point(36, 20);
+            this.confirmBTN.Location = new System.Drawing.Point(40, 20);
             this.confirmBTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.confirmBTN.Name = "confirmBTN";
             this.confirmBTN.Size = new System.Drawing.Size(99, 34);
@@ -761,8 +716,6 @@
             this.sidePanel8.ResumeLayout(false);
             this.sidePanel8.PerformLayout();
             this.sidePanel5.ResumeLayout(false);
-            this.sidePanel11.ResumeLayout(false);
-            this.sidePanel11.PerformLayout();
             this.sidePanel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -817,8 +770,5 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEditQuantity;
         private DevExpress.XtraGrid.Columns.GridColumn ProductID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraEditors.SidePanel sidePanel10;
-        private DevExpress.XtraEditors.SidePanel sidePanel11;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

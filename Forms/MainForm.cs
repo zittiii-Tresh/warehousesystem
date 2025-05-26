@@ -56,6 +56,20 @@ namespace warehousesystem.Forms
             cashierControl.Show();
         }
 
+        private void salesBTN_Click(object sender, EventArgs e)
+        {
+            mainPC.Controls.Clear();  // Clear existing controls
 
+            SaleForm saleControl = new SaleForm();
+            saleControl.Dock = DockStyle.Fill; // Ensure it fills the panel
+
+            // Optional: Force redraw (in case layout glitches)
+            saleControl.Margin = new Padding(0); // Optional: removes any margin
+            mainPC.Padding = new Padding(0);     // Optional: removes padding
+
+            mainPC.Controls.Add(saleControl);
+            mainPC.Invalidate();  // Force control to refresh
+            mainPC.Update();      // Apply changes immediately
+        }
     }
 }
