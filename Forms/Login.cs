@@ -13,12 +13,13 @@ using Dapper;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using warehousesystem.GlobalConnection;
+using warehousesystem.Model;
 
 namespace warehousesystem.Forms
 {
     public partial class Login : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private static string connectionString = ConnectionString.ConnString;
+        private static string connectionString = ConnectionString.ConnString;        
         public Login()
         {
             InitializeComponent();
@@ -53,19 +54,20 @@ namespace warehousesystem.Forms
                     EmployeeID = employeeID,
                     Password = password
                 });
+                var currentUser = employeeID;
 
                 if (positionID.HasValue)
                 {
                     switch (positionID.Value)
                     {
                         case 1:
-                            new MainForm().Show();
+                            new MainForm(currentUser).Show();
                             break;
                         case 2:
                             new Staff().Show(); // Replace with your actual staff form
                             break;
                         case 3:
-                            new CashierForm().Show();
+                            new CashierForm(currentUser).Show();
                             break;
                         default:
                             XtraMessageBox.Show("Unknown position ID!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -98,12 +100,6 @@ namespace warehousesystem.Forms
                 textEditPassword.Tag = "eyeopen";
                 textEditPassword.Properties.UseSystemPasswordChar = true;
             }
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            CashierForm cashier = new CashierForm();
-            cashier.Show();
         }
 
         private void textEditPassword_KeyDown(object sender, KeyEventArgs e)

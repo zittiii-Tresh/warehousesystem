@@ -1,4 +1,4 @@
-﻿namespace warehousesystem.Forms
+namespace warehousesystem.Forms
 {
     partial class CashierForm
     {
