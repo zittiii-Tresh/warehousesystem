@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,17 +15,24 @@ using warehousesystem.Model;
 using DevExpress.XtraEditors;
 using Dapper;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraExport.Helpers;
+using static System.Collections.Specialized.BitVector32;
 
 namespace warehousesystem.Forms
 {
 	public partial class CashierForm: DevExpress.XtraBars.Ribbon.RibbonForm
 	{
         private static string connectionString = ConnectionString.ConnString;
-        public CashierForm()
+
+        public string _currentUser;
+
+        public CashierForm(string currentUser )
         {
             InitializeComponent();
             ListOfProduct();
             dateLabel.Text = DateTime.Now.ToLongDateString();
+            _currentUser = currentUser;
+
         }
         private DataTable ListOfProduct()
         {
@@ -144,8 +152,65 @@ namespace warehousesystem.Forms
                 return stockQuantity;
             }
         }
+        private string GenerateReferenceNumber(string currentUser)
+        {
+            string datePart = DateTime.Now.ToString("yyyyMMdd");
+            string timePart = DateTime.Now.ToString("HHmmss");
+            string secPart =  DateTime.Now.ToString("ss");
+
+            return $"{currentUser}{datePart}{timePart}{secPart}";
+        }
         private void confirmBTN_Click(object sender, EventArgs e)
         {
+            
+            DateTime now = DateTime.Now;
+            string referenceNumber = GenerateReferenceNumber(_currentUser); // Generate ONCE
+            decimal totalAmount = decimal.Parse(lblTotalAmount.Text);     // From label
+
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                for (int i = 0; i < gvProductSales.RowCount; i++)
+                {
+                    var productId = gvProductSales.GetRowCellValue(i, "ProductID")?.ToString();
+                    var quantity = Convert.ToInt32( gvProductSales.GetRowCellValue(i, "Quantity"));
+
+                    string sql = @"
+                INSERT INTO Sale (
+                    ReferenceNumber,
+                    TotalAmount,
+                    ProductID,
+                    ProductQuantity,
+                    DatePurchased,
+                    EmployeeID
+                )
+                VALUES (
+                    @ReferenceNumber,
+                    @TotalAmount,
+                    @ProductID,
+                    @ProductQuantity,
+                    @DatePurchased,
+                    @EmployeeID
+                )
+            ";
+
+                    var parameters = new
+                    {
+                        ReferenceNumber = referenceNumber,
+                        TotalAmount = totalAmount,
+                        ProductID = productId,
+                        ProductQuantity = quantity,
+                        DatePurchased = now,
+                        EmployeeID = _currentUser
+                    };
+
+                    connection.Execute(sql, parameters);
+                }
+
+                MessageBox.Show("Transaction completed successfully!");
+            }
+
             GridView view = gcProductSales.MainView as GridView;
             if (view == null) return;
             List<string> errorMessages = new List<string>();

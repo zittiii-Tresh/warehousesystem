@@ -21,9 +21,14 @@ namespace warehousesystem.Forms
         public MainForm(string currentUser)
         {
             InitializeComponent();
+<<<<<<< HEAD
             _currentUser = currentUser;
      
+=======
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Dock = DockStyle.Fill;
             mainPC.Controls.Add(dashboardForm);
+>>>>>>> GiecoBranch1
         }
 
         private void exitBTN_Click(object sender, EventArgs e)
@@ -57,6 +62,7 @@ namespace warehousesystem.Forms
             cashierControl.Show();
         }
 
+<<<<<<< HEAD
         private void salesBTN_Click(object sender, EventArgs e)
         {
             mainPC.Controls.Clear();  // Clear existing controls
@@ -67,10 +73,18 @@ namespace warehousesystem.Forms
             // Optional: Force redraw (in case layout glitches)
             saleControl.Margin = new Padding(0); // Optional: removes any margin
             mainPC.Padding = new Padding(0);     // Optional: removes padding
-            DashboardForm dashboardForm = new DashboardForm();
+
             mainPC.Controls.Add(saleControl);
             mainPC.Invalidate();  // Force control to refresh
             mainPC.Update();      // Apply changes immediately
+=======
+        private void dashboardBTN_Click(object sender, EventArgs e)
+        {
+            mainPC.Controls.Clear();
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Dock = DockStyle.Fill;
+            mainPC.Controls.Add(dashboardForm);
+>>>>>>> GiecoBranch1
         }
     }
 }

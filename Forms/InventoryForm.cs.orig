@@ -568,6 +568,9 @@ namespace warehousesystem.Forms
             }
         }
 
+<<<<<<< HEAD
+      
+=======
         private DataTable LoadLocations()
         {
             using (SqlConnection connection = new SqlConnection(GlobalConnection))
@@ -586,8 +589,7 @@ namespace warehousesystem.Forms
                 }
             }
         }
-
-      
+>>>>>>> GiecoBranch1
     }
 }
 
