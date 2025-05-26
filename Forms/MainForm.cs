@@ -19,6 +19,9 @@ namespace warehousesystem.Forms
         public MainForm()
         {
             InitializeComponent();
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Dock = DockStyle.Fill;
+            mainPC.Controls.Add(dashboardForm);
         }
 
         private void exitBTN_Click(object sender, EventArgs e)
@@ -54,6 +57,12 @@ namespace warehousesystem.Forms
 
         }
 
-
+        private void dashboardBTN_Click(object sender, EventArgs e)
+        {
+            mainPC.Controls.Clear();
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.Dock = DockStyle.Fill;
+            mainPC.Controls.Add(dashboardForm);
+        }
     }
 }

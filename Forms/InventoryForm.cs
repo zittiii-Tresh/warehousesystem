@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Dapper;
+using DevExpress.Skins;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraSpellChecker.Parser;
@@ -25,11 +26,12 @@ namespace warehousesystem.Forms
         {
             InitializeComponent();
             LoadCategoriesIntoLookUpEdit();
-            LoadAisleIntoLookUpEdit();
-            LoadContainerIntoLookUpEdit();
-            LoadShelfIntoLookUpEdit();
+            //LoadAisleIntoLookUpEdit();
+            //LoadContainerIntoLookUpEdit();
+            //LoadShelfIntoLookUpEdit();
             dateLabel.Text = DateTime.Now.ToLongDateString();
             FilterAllProducts();
+            LoadLocations();
         }
 
         private void producttypeaddBTN_Click(object sender, EventArgs e)
@@ -77,111 +79,194 @@ namespace warehousesystem.Forms
             producttypeLUE.RefreshEditValue();
         }
 
-        public List<Model.ProductLocation.AisleLocation> AisleLocation()
+        public List<Model.ProductLocation.AisleLocation> GetDistinctAisles()
         {
             using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
-
-                string query = @"SELECT Aisle FROM dbo.AisleLocation;";
-
+                string query = @"
+            SELECT DISTINCT LEFT(LocationCode, CHARINDEX('-', LocationCode) - 1) AS Aisle
+            FROM pro.ProductLocations
+            WHERE Availability = 'Available';";
                 return connection.Query<Model.ProductLocation.AisleLocation>(query).ToList();
             }
         }
 
-        private void LoadAisleIntoLookUpEdit()
-        {
-            var aisle = AisleLocation();
-            if (aisle.Any())
-            {
-                aisleLUE.Properties.DataSource = aisle;
-                aisleLUE.Properties.DisplayMember = "Aisle";
-                aisleLUE.Properties.ValueMember = "Aisle";
-            }
-        }
+        //private void LoadAisleIntoLookUpEdit()
+        //{
+        //    var aisles = GetDistinctAisles();
+        //    if (aisles.Any())
+        //    {
+        //        aisleLUE.Properties.DataSource = aisles;
+        //        aisleLUE.Properties.ValueMember = "Aisle";
+        //        aisleLUE.Properties.DisplayMember = "Aisle";
+        //    }
+        //}
 
-        public List<Model.ProductLocation.ContainerLocation> ContainerLocation()
+        //public List<Model.ProductLocation.AisleLocation> AisleLocation()
+        //{
+        //    using (var connection = new SqlConnection(GlobalConnection))
+        //    {
+        //        connection.Open();
+
+        //        string query = @"SELECT Aisle FROM dbo.AisleLocation;";
+
+        //        return connection.Query<Model.ProductLocation.AisleLocation>(query).ToList();
+        //    }
+        //}
+
+        //private void LoadAisleIntoLookUpEdit()
+        //{
+        //    var aisle = AisleLocation();
+        //    if (aisle.Any())
+        //    {
+        //        aisleLUE.Properties.DataSource = aisle;
+        //        aisleLUE.Properties.DisplayMember = "Aisle";
+        //        aisleLUE.Properties.ValueMember = "Aisle";
+        //    }
+        //}
+
+        public List<Model.ProductLocation.ContainerLocation> GetDistinctContainers()
         {
             using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
-
-                string query = @"SELECT Container FROM dbo.ContainerLocation;";
+                string query = @"
+            SELECT Container
+            FROM (
+                SELECT 
+                    SUBSTRING(
+                        LocationCode, 
+                        CHARINDEX('-', LocationCode) + 1, 
+                        CHARINDEX('-', LocationCode, CHARINDEX('-', LocationCode) + 1) - CHARINDEX('-', LocationCode) - 1
+                    ) AS Container
+                FROM pro.ProductLocations
+                WHERE Availability = 'Available'
+            ) AS ContainerParts
+            
+            GROUP BY Container
+            ORDER BY TRY_CAST(Container AS INT);";
 
                 return connection.Query<Model.ProductLocation.ContainerLocation>(query).ToList();
             }
         }
 
-        private void LoadContainerIntoLookUpEdit()
-        {
-            var container = ContainerLocation();
-            if (container.Any())
-            {
-                containerLUE.Properties.DataSource = container;
-                containerLUE.Properties.DisplayMember = "Container";
-                containerLUE.Properties.ValueMember = "Container";
-            }
-        }
+        //private void LoadContainerIntoLookUpEdit()
+        //{
+        //    var containers = GetDistinctContainers();
+        //    if (containers.Any())
+        //    {
+        //        containerLUE.Properties.DataSource = containers;
+        //        containerLUE.Properties.DisplayMember = "Container";
+        //        containerLUE.Properties.ValueMember = "Container";
+        //    }
+        //}
 
-        public List<Model.ProductLocation.ShelfLocation> ShelfLocation()
+        //public List<Model.ProductLocation.ContainerLocation> ContainerLocation()
+        //{
+        //    using (var connection = new SqlConnection(GlobalConnection))
+        //    {
+        //        connection.Open();
+
+        //        string query = @"SELECT Container FROM dbo.ContainerLocation;";
+
+        //        return connection.Query<Model.ProductLocation.ContainerLocation>(query).ToList();
+        //    }
+        //}
+
+        //private void LoadContainerIntoLookUpEdit()
+        //{
+        //    var container = ContainerLocation();
+        //    if (container.Any())
+        //    {
+        //        containerLUE.Properties.DataSource = container;
+        //        containerLUE.Properties.DisplayMember = "Container";
+        //        containerLUE.Properties.ValueMember = "Container";
+        //    }
+        //}
+
+        public List<Model.ProductLocation.ShelfLocation> GetDistinctShelves()
         {
             using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
-
-                string query = @"SELECT Shelf FROM dbo.ShelfLocation;";
-
+                string query = @"
+            SELECT Shelf
+            FROM (
+                SELECT 
+                    RIGHT(LocationCode, CHARINDEX('-', REVERSE(LocationCode)) - 1) AS Shelf
+                FROM pro.ProductLocations
+                WHERE Availability = 'Available'
+            ) AS ShelfParts
+            
+            GROUP BY Shelf
+            ORDER BY TRY_CAST(Shelf AS INT);";
                 return connection.Query<Model.ProductLocation.ShelfLocation>(query).ToList();
             }
         }
-        private void LoadShelfIntoLookUpEdit()
-        {
-            var shelf = ShelfLocation();
-            if (shelf.Any())
-            {
-                shelfLUE.Properties.DataSource = shelf;
-                shelfLUE.Properties.DisplayMember = "Shelf";
-                shelfLUE.Properties.ValueMember = "Shelf";
-            }
-        }
+
+        //private void LoadShelfIntoLookUpEdit()
+        //{
+        //    var shelves = GetDistinctShelves();
+        //    if (shelves.Any())
+        //    {
+        //        shelfLUE.Properties.DataSource = shelves;
+        //        shelfLUE.Properties.DisplayMember = "Shelf";
+        //        shelfLUE.Properties.ValueMember = "Shelf";
+        //    }
+        //}
+
+        //public List<Model.ProductLocation.ShelfLocation> ShelfLocation()
+        //{
+        //    using (var connection = new SqlConnection(GlobalConnection))
+        //    {
+        //        connection.Open();
+
+        //        string query = @"SELECT Shelf FROM dbo.ShelfLocation;";
+
+        //        return connection.Query<Model.ProductLocation.ShelfLocation>(query).ToList();
+        //    }
+        //}
+        //private void LoadShelfIntoLookUpEdit()
+        //{
+        //    var shelf = ShelfLocation();
+        //    if (shelf.Any())
+        //    {
+        //        shelfLUE.Properties.DataSource = shelf;
+        //        shelfLUE.Properties.DisplayMember = "Shelf";
+        //        shelfLUE.Properties.ValueMember = "Shelf";
+        //    }
+        //}
 
         private void addBTN_Click(object sender, EventArgs e)
         {
             if (IsProductIdExist(productidTE.Text))
             {
                 XtraMessageBox.Show("ProductID already exists. Please use a unique ProductID.", "Duplicate ProductID", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
-            Model.Product products = new Model.Product();
-            products.ProductID = productidTE.Text;
-            products.ProductName = productnameTE.Text;
-            products.CategoryID = Convert.ToInt32(producttypeLUE.EditValue);
-            products.StockQuantity = Convert.ToInt32(stocksTE.Text);
-            products.LowStockLevel = Convert.ToInt32(lowstocklevelTE.Text);
-            products.ProductPrice = Convert.ToDouble(productpriceTE.Text);
-            products.SupplierName = suppliernameTE.Text;
-            products.SupplierNo = suppliernoTE.Text;
 
-            RegisterProductDetail(products);
+            Model.Product products = new Model.Product
+            {
+                ProductID = productidTE.Text,
+                ProductName = productnameTE.Text,
+                CategoryID = Convert.ToInt32(producttypeLUE.EditValue),
+                StockQuantity = Convert.ToInt32(stocksTE.Text),
+                LowStockLevel = Convert.ToInt32(lowstocklevelTE.Text),
+                ProductPrice = Convert.ToDouble(productpriceTE.Text),
+                SupplierName = suppliernameTE.Text,
+                SupplierNo = suppliernoTE.Text,
+                QuantityPerShelf = Convert.ToInt32(quantitypershelfTE.Text) // ✅ NEW: include in model
+            };
 
-            Model.ProductLocation productLocation = new Model.ProductLocation();
-            productLocation.ProductID =products.ProductID;
+            RegisterProductDetail(products); // 🔁 Accepts only 'products' now
+            RegisterProductLocation(products); // 🔁 Uses stored procedure to assign shelf slots
 
-            Model.ProductLocation.AisleLocation aisle = new Model.ProductLocation.AisleLocation();
-            aisle.Aisle = aisleLUE.Text;
-
-            Model.ProductLocation.ContainerLocation container = new Model.ProductLocation.ContainerLocation();
-            container.Container = containerLUE.Text;
-
-            Model.ProductLocation.ShelfLocation shelf = new Model.ProductLocation.ShelfLocation();
-            shelf.Shelf = shelfLUE.Text;
-
-            RegisterProductLocation(productLocation,aisle,container,shelf);
             XtraMessageBox.Show("Product Added Successfully!");
             gcProducts.DataSource = FilterAllProducts();
+            gcProductLocation.RefreshDataSource();
 
-            gcProducts.DataSource = FilterAllProducts();
-
+            // ✅ Clear inputs
             productidTE.Text = string.Empty;
             productnameTE.Text = string.Empty;
             stocksTE.Text = string.Empty;
@@ -189,18 +274,10 @@ namespace warehousesystem.Forms
             productpriceTE.Text = string.Empty;
             suppliernameTE.Text = string.Empty;
             suppliernoTE.Text = string.Empty;
+            quantitypershelfTE.Text = string.Empty;
 
             producttypeLUE.EditValue = null;
             producttypeLUE.Text = string.Empty;
-
-            aisleLUE.EditValue = null;
-            aisleLUE.Text = string.Empty;
-
-            containerLUE.EditValue = null;
-            containerLUE.Text = string.Empty;
-
-            shelfLUE.EditValue = null;
-            shelfLUE.Text = string.Empty;
         }
 
         private static void RegisterProductDetail(Model.Product products)
@@ -214,72 +291,76 @@ namespace warehousesystem.Forms
                 {
                     stockStatus = "Out of Stock";
                 }
-                else if (products.StockQuantity < products.LowStockLevel)
-                {
-                    stockStatus = "Low Stock";
-                }
-                else
+                else if (products.StockQuantity > products.LowStockLevel)
                 {
                     stockStatus = "In Stock";
                 }
+                else 
+                {
+                    stockStatus = "Low Stock";
+                }
 
-                var query = @"
-                                INSERT INTO pro.Product (ProductID, 
-                                                         ProductName, 
-                                                         CategoryID, 
-                                                         StockQuantity, 
-                                                         StockStatus, 
-                                                         LowStockLevel, 
-                                                         ProductPrice, 
-                                                         SupplierName,
-                                                         SupplierNo)
-                                VALUES (@ProductID, 
-                                        @ProductName, 
-                                        @CategoryID, 
-                                        @StockQuantity, 
-                                        @StockStatus, 
-                                        @LowStockLevel, 
-                                        @ProductPrice, 
-                                        @SupplierName, 
-                                        @SupplierNo)";
-                var parameters = new
+                // Insert product info
+                var insertProductQuery = @"
+            INSERT INTO pro.Product (
+                ProductID, 
+                ProductName, 
+                CategoryID, 
+                StockQuantity,
+                QuantityPerShelf,
+                StockStatus, 
+                LowStockLevel, 
+                ProductPrice, 
+                SupplierName,
+                SupplierNo)
+            VALUES (
+                @ProductID, 
+                @ProductName, 
+                @CategoryID, 
+                @StockQuantity,
+                @QuantityPerShelf,
+                @StockStatus, 
+                @LowStockLevel, 
+                @ProductPrice, 
+                @SupplierName, 
+                @SupplierNo)";
+
+                var insertParams = new
                 {
                     products.ProductID,
                     products.ProductName,
                     products.CategoryID,
                     products.StockQuantity,
-                    StockStatus = stockStatus, 
+                    products.QuantityPerShelf,
+                    StockStatus = stockStatus,
                     products.LowStockLevel,
                     products.ProductPrice,
                     products.SupplierName,
                     products.SupplierNo
                 };
 
-                int rowsAffected = connection.Execute(query, parameters);
+                connection.Execute(insertProductQuery, insertParams);
             }
         }
 
-        private static void RegisterProductLocation(Model.ProductLocation location, Model.ProductLocation.AisleLocation aisle, Model.ProductLocation.ContainerLocation container, Model.ProductLocation.ShelfLocation shelf)
+
+        private static void RegisterProductLocation(Model.Product products)
         {
-            using (var connection = new SqlConnection(GlobalConnection)) 
+            using (var connection = new SqlConnection(GlobalConnection))
             {
                 connection.Open();
 
-                string locationID = $"{aisle.Aisle}.{container.Container}.{shelf.Shelf}";
-
-                var query = @"
-                                INSERT INTO pro.ProductLocation (ProductID, LocationID)
-                                VALUES (@ProductID, @LocationID)";
-
                 var parameters = new
                 {
-                    location.ProductID,
-                    LocationID = locationID
+                    ProductID = products.ProductID,
+                    QuantityPerShelf = products.QuantityPerShelf,
+                    StockQuantity = products.StockQuantity
                 };
 
-                int rowsAffected = connection.Execute(query, parameters);
+                connection.Execute("pro.InsertProductIntoLocations", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
 
         private void clearBTN_Click(object sender, EventArgs e)
         {
@@ -291,9 +372,9 @@ namespace warehousesystem.Forms
             productpriceTE.Text = string.Empty;
             suppliernameTE.Text = string.Empty;
             suppliernoTE.Text = string.Empty;
-            aisleLUE.Text = string.Empty;
-            containerLUE.Text = string.Empty;
-            shelfLUE.Text = string.Empty;
+            //aisleLUE.Text = string.Empty;
+            //containerLUE.Text = string.Empty;
+            //shelfLUE.Text = string.Empty;
         }
 
         private DataTable FilterAllProducts()
@@ -302,28 +383,30 @@ namespace warehousesystem.Forms
             {
                 connection.Open();
                 string query = @"SELECT p.ProductID,
-	                               p.ProductName,
-	                               pc.CategoryName,
-	                               pl.LocationID,
-                                   p.LowStockLevel,
-	                               p.StockQuantity,
-	                               p.StockStatus,
-	                               p.ProductPrice,
-	                               p.SupplierName,
-	                               p.SupplierNo
-	   
-                            FROM pro.Product p
-                            LEFT JOIN pro.ProductCategory pc
-                            ON pc.CategoryID = p.CategoryID
-                            LEFT JOIN pro.ProductLocation pl
-                            ON pl.ProductID = p.ProductID
-                            ORDER BY 
-                            CASE p.StockStatus
-                                WHEN 'Out of Stock' THEN 0
-                                WHEN 'Low Stock' THEN 1
-                                WHEN 'In Stock' THEN 2
-                                ELSE 3
-                            END";
+                    p.ProductName,
+                    pc.CategoryName,
+                    STRING_AGG(pl.LocationCode, ', ') AS LocationCode,
+                    p.LowStockLevel,
+                    p.StockQuantity,
+                    p.QuantityPerShelf,
+                    p.StockStatus,
+                    p.ProductPrice,
+                    p.SupplierName,
+                    p.SupplierNo
+                FROM pro.Product p
+                LEFT JOIN pro.ProductCategory pc
+                ON pc.CategoryID = p.CategoryID
+                LEFT JOIN pro.ProductLocations pl
+                ON pl.ProductID = p.ProductID
+                GROUP BY p.ProductID, p.ProductName, pc.CategoryName, p.LowStockLevel,
+                    p.StockQuantity, p.StockStatus, p.ProductPrice, p.SupplierName, p.SupplierNo, p.QuantityPerShelf
+                ORDER BY 
+                CASE 
+                    WHEN p.StockStatus = 'Out of Stock' THEN 0
+                    WHEN p.StockStatus = 'Low Stock' THEN 1
+                    WHEN p.StockStatus = 'In Stock' THEN 2
+                    ELSE 3
+                END";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
@@ -344,23 +427,24 @@ namespace warehousesystem.Forms
             productnameTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductName"));
             producttypeLUE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("CategoryName"));
             stocksTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("StockQuantity"));
+            quantitypershelfTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("QuantityPerShelf"));
             lowstocklevelTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("LowStockLevel"));
             productpriceTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("ProductPrice"));
             suppliernameTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("SupplierName"));
             suppliernoTE.Text = Convert.ToString(gvProducts.GetFocusedRowCellValue("SupplierNo"));
 
-            string locationID = Convert.ToString(gvProducts.GetFocusedRowCellValue("LocationID"));
-            var parts = locationID.Split('.');
+            string locationCode = Convert.ToString(gvProducts.GetFocusedRowCellValue("LocationCode"));
+            var parts = locationCode.Split('-');
             if (parts.Length == 3)
             {
-                aisleLUE.Text = parts[0];
-                containerLUE.Text = parts[1];
-                shelfLUE.Text = parts[2];
+                //aisleLUE.Text = parts[0];
+                //containerLUE.Text = parts[1];
+                //shelfLUE.Text = parts[2];
             }
 
         }
 
-        public bool Update(string productID, string productName, int categoryID, int stocks, int lowStocklevel, double productPrice, string supplierName, string supplierNo, string locationID)
+        public bool Update(string productID, string productName, int categoryID, int stocks, int quantitypershelf, int lowStocklevel, double productPrice, string supplierName, string supplierNo)
         {
             using (var connection = new SqlConnection(GlobalConnection))
             {
@@ -371,11 +455,12 @@ namespace warehousesystem.Forms
                     ProductName = productName,
                     CategoryID = categoryID,
                     StockQuantity = stocks,
+                    QuantityPerShelf = quantitypershelf,
                     LowStockLevel = lowStocklevel,
                     ProductPrice = productPrice,
                     SupplierName = supplierName,
-                    SupplierNo = supplierNo,
-                    LocationID = locationID
+                    SupplierNo = supplierNo
+                    //LocationID = locationID
                 };
 
                 int rowsAffected = connection.Execute("UpdateProduct", parameters, commandType: CommandType.StoredProcedure);
@@ -389,14 +474,13 @@ namespace warehousesystem.Forms
             string productName = productnameTE.Text;
             int categoryID = Convert.ToInt32(producttypeLUE.EditValue);
             int stocks = Convert.ToInt32(stocksTE.Text);
+            int quantitypershelf = Convert.ToInt32(quantitypershelfTE.Text);
             int lowStocklevel = Convert.ToInt32(lowstocklevelTE.Text);
             double productPrice = Convert.ToDouble(productpriceTE.Text);
             string supplierName = suppliernameTE.Text;
             string supplierNo = suppliernoTE.Text;
 
-            string locationID = $"{aisleLUE.Text}.{containerLUE.Text}.{shelfLUE.Text}";
-
-            bool isUpdated = Update(productID, productName, categoryID, stocks, lowStocklevel, productPrice, supplierName, supplierNo, locationID);
+            bool isUpdated = Update(productID, productName, categoryID, stocks, quantitypershelf, lowStocklevel, productPrice, supplierName, supplierNo);
 
             if (isUpdated)
             {
@@ -481,6 +565,25 @@ namespace warehousesystem.Forms
                 int count = connection.ExecuteScalar<int>(query, new { ProductID = productId });
 
                 return count > 0;
+            }
+        }
+
+        private DataTable LoadLocations()
+        {
+            using (SqlConnection connection = new SqlConnection(GlobalConnection))
+            {
+                connection.Open();
+                string query = @"EXEC RetrieveProductLocations";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        gcProductLocation.DataSource = dataTable;
+                        return dataTable;
+                    }
+                }
             }
         }
     }

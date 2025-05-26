@@ -142,6 +142,7 @@
             this.dashboardBTN.Size = new System.Drawing.Size(74, 91);
             this.dashboardBTN.TabIndex = 1;
             this.dashboardBTN.Text = "Dashboard";
+            this.dashboardBTN.Click += new System.EventHandler(this.dashboardBTN_Click);
             // 
             // exitBTN
             // 

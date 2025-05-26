@@ -28,5 +28,6 @@ namespace warehousesystem.Model
         public string LocationID { get; set; }
 
         public string CategoryName { get; set; }
+        public int QuantityPerShelf { get; set; }
     }
 }
