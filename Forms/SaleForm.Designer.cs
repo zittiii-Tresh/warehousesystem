@@ -47,7 +47,17 @@
             this.sidePanel5 = new DevExpress.XtraEditors.SidePanel();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.sidePanel10 = new DevExpress.XtraEditors.SidePanel();
+            this.sidePanel12 = new DevExpress.XtraEditors.SidePanel();
+            this.filterLabel = new DevExpress.XtraEditors.LabelControl();
+            this.filterTotal = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel7 = new DevExpress.XtraEditors.SidePanel();
+            this.gcSale = new DevExpress.XtraGrid.GridControl();
+            this.gvSale = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sidePanel6 = new DevExpress.XtraEditors.SidePanel();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmbBoxFilterSale = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -57,21 +67,11 @@
             this.btnGenerateAllSales = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel11 = new DevExpress.XtraEditors.SidePanel();
-            this.filterLabel = new DevExpress.XtraEditors.LabelControl();
-            this.filterTotal = new DevExpress.XtraEditors.LabelControl();
-            this.gcSale = new DevExpress.XtraGrid.GridControl();
-            this.gvSale = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcProductList = new DevExpress.XtraGrid.GridControl();
             this.gvProductList = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ProductName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ProductQuantity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Total = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.sidePanel12 = new DevExpress.XtraEditors.SidePanel();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.sidePanel1.SuspendLayout();
             this.sidePanel2.SuspendLayout();
@@ -82,17 +82,17 @@
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
             this.sidePanel10.SuspendLayout();
+            this.sidePanel12.SuspendLayout();
             this.sidePanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).BeginInit();
             this.sidePanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBoxFilterSale.Properties)).BeginInit();
             this.sidePanel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFilterGenerateSales.Properties)).BeginInit();
             this.sidePanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProductList)).BeginInit();
-            this.sidePanel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridView1
@@ -368,131 +368,18 @@
             this.sidePanel10.TabIndex = 66;
             this.sidePanel10.Text = "sidePanel10";
             // 
-            // sidePanel7
+            // sidePanel12
             // 
-            this.sidePanel7.AllowResize = false;
-            this.sidePanel7.BorderThickness = 0;
-            this.sidePanel7.Controls.Add(this.gcSale);
-            this.sidePanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidePanel7.Location = new System.Drawing.Point(0, 45);
-            this.sidePanel7.Name = "sidePanel7";
-            this.sidePanel7.Size = new System.Drawing.Size(1055, 791);
-            this.sidePanel7.TabIndex = 65;
-            this.sidePanel7.Text = "sidePanel7";
-            // 
-            // sidePanel6
-            // 
-            this.sidePanel6.AllowResize = false;
-            this.sidePanel6.BorderThickness = 0;
-            this.sidePanel6.Controls.Add(this.labelControl3);
-            this.sidePanel6.Controls.Add(this.cmbBoxFilterSale);
-            this.sidePanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidePanel6.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel6.Name = "sidePanel6";
-            this.sidePanel6.Size = new System.Drawing.Size(1055, 45);
-            this.sidePanel6.TabIndex = 64;
-            this.sidePanel6.Text = "sidePanel6";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(6, 14);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(69, 18);
-            this.labelControl3.TabIndex = 46;
-            this.labelControl3.Text = "Filter By:";
-            // 
-            // cmbBoxFilterSale
-            // 
-            this.cmbBoxFilterSale.Location = new System.Drawing.Point(81, 8);
-            this.cmbBoxFilterSale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbBoxFilterSale.Name = "cmbBoxFilterSale";
-            this.cmbBoxFilterSale.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbBoxFilterSale.Properties.Items.AddRange(new object[] {
-            "All Sales",
-            "Daily Sales",
-            "Weekly Sales",
-            "Monthly Sales"});
-            this.cmbBoxFilterSale.Size = new System.Drawing.Size(254, 28);
-            this.cmbBoxFilterSale.TabIndex = 45;
-            this.cmbBoxFilterSale.EditValueChanged += new System.EventHandler(this.cmbBoxFilterSale_EditValueChanged);
-            // 
-            // sidePanel14
-            // 
-            this.sidePanel14.BorderThickness = 0;
-            this.sidePanel14.Controls.Add(this.cmbFilterGenerateSales);
-            this.sidePanel14.Controls.Add(this.totalLabel);
-            this.sidePanel14.Controls.Add(this.btnGenerateAllSales);
-            this.sidePanel14.Controls.Add(this.labelControl2);
-            this.sidePanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel14.Location = new System.Drawing.Point(0, 836);
-            this.sidePanel14.Name = "sidePanel14";
-            this.sidePanel14.Size = new System.Drawing.Size(669, 196);
-            this.sidePanel14.TabIndex = 66;
-            this.sidePanel14.Text = "sidePanel14";
-            // 
-            // cmbFilterGenerateSales
-            // 
-            this.cmbFilterGenerateSales.Location = new System.Drawing.Point(14, 14);
-            this.cmbFilterGenerateSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmbFilterGenerateSales.Name = "cmbFilterGenerateSales";
-            this.cmbFilterGenerateSales.Properties.AutoHeight = false;
-            this.cmbFilterGenerateSales.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbFilterGenerateSales.Properties.Items.AddRange(new object[] {
-            "All Sales",
-            "Daily Sales",
-            "Weekly Sales",
-            "Monthly Sales"});
-            this.cmbFilterGenerateSales.Size = new System.Drawing.Size(316, 40);
-            this.cmbFilterGenerateSales.TabIndex = 66;
-            // 
-            // totalLabel
-            // 
-            this.totalLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.totalLabel.Appearance.Options.UseFont = true;
-            this.totalLabel.Appearance.Options.UseForeColor = true;
-            this.totalLabel.Location = new System.Drawing.Point(519, 6);
-            this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(130, 23);
-            this.totalLabel.TabIndex = 65;
-            this.totalLabel.Text = "Total Amount";
-            // 
-            // btnGenerateAllSales
-            // 
-            this.btnGenerateAllSales.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(173)))), ((int)(((byte)(75)))));
-            this.btnGenerateAllSales.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerateAllSales.Appearance.Options.UseBackColor = true;
-            this.btnGenerateAllSales.Appearance.Options.UseFont = true;
-            this.btnGenerateAllSales.Location = new System.Drawing.Point(14, 63);
-            this.btnGenerateAllSales.Name = "btnGenerateAllSales";
-            this.btnGenerateAllSales.Size = new System.Drawing.Size(157, 39);
-            this.btnGenerateAllSales.TabIndex = 63;
-            this.btnGenerateAllSales.Text = "Generate Sale Report";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(437, 6);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(76, 23);
-            this.labelControl2.TabIndex = 64;
-            this.labelControl2.Text = "TOTAL: ";
-            // 
-            // sidePanel11
-            // 
-            this.sidePanel11.BorderThickness = 0;
-            this.sidePanel11.Controls.Add(this.gcProductList);
-            this.sidePanel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.sidePanel11.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel11.Name = "sidePanel11";
-            this.sidePanel11.Size = new System.Drawing.Size(669, 836);
-            this.sidePanel11.TabIndex = 63;
-            this.sidePanel11.Text = "sidePanel11";
+            this.sidePanel12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(101)))), ((int)(((byte)(33)))));
+            this.sidePanel12.Appearance.Options.UseBackColor = true;
+            this.sidePanel12.BorderThickness = 2;
+            this.sidePanel12.Controls.Add(this.filterLabel);
+            this.sidePanel12.Controls.Add(this.filterTotal);
+            this.sidePanel12.Location = new System.Drawing.Point(272, 27);
+            this.sidePanel12.Name = "sidePanel12";
+            this.sidePanel12.Size = new System.Drawing.Size(478, 79);
+            this.sidePanel12.TabIndex = 52;
+            this.sidePanel12.Text = "sidePanel12";
             // 
             // filterLabel
             // 
@@ -517,6 +404,18 @@
             this.filterTotal.Size = new System.Drawing.Size(24, 19);
             this.filterTotal.TabIndex = 51;
             this.filterTotal.Text = "100";
+            // 
+            // sidePanel7
+            // 
+            this.sidePanel7.AllowResize = false;
+            this.sidePanel7.BorderThickness = 0;
+            this.sidePanel7.Controls.Add(this.gcSale);
+            this.sidePanel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidePanel7.Location = new System.Drawing.Point(0, 45);
+            this.sidePanel7.Name = "sidePanel7";
+            this.sidePanel7.Size = new System.Drawing.Size(1055, 791);
+            this.sidePanel7.TabIndex = 65;
+            this.sidePanel7.Text = "sidePanel7";
             // 
             // gcSale
             // 
@@ -660,6 +559,120 @@
             this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 157;
             // 
+            // sidePanel6
+            // 
+            this.sidePanel6.AllowResize = false;
+            this.sidePanel6.BorderThickness = 0;
+            this.sidePanel6.Controls.Add(this.labelControl3);
+            this.sidePanel6.Controls.Add(this.cmbBoxFilterSale);
+            this.sidePanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidePanel6.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel6.Name = "sidePanel6";
+            this.sidePanel6.Size = new System.Drawing.Size(1055, 45);
+            this.sidePanel6.TabIndex = 64;
+            this.sidePanel6.Text = "sidePanel6";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(6, 14);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(69, 18);
+            this.labelControl3.TabIndex = 46;
+            this.labelControl3.Text = "Filter By:";
+            // 
+            // cmbBoxFilterSale
+            // 
+            this.cmbBoxFilterSale.Location = new System.Drawing.Point(81, 8);
+            this.cmbBoxFilterSale.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBoxFilterSale.Name = "cmbBoxFilterSale";
+            this.cmbBoxFilterSale.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbBoxFilterSale.Properties.Items.AddRange(new object[] {
+            "All Sales",
+            "Daily Sales",
+            "Weekly Sales",
+            "Monthly Sales"});
+            this.cmbBoxFilterSale.Size = new System.Drawing.Size(254, 28);
+            this.cmbBoxFilterSale.TabIndex = 45;
+            this.cmbBoxFilterSale.EditValueChanged += new System.EventHandler(this.cmbBoxFilterSale_EditValueChanged);
+            // 
+            // sidePanel14
+            // 
+            this.sidePanel14.BorderThickness = 0;
+            this.sidePanel14.Controls.Add(this.cmbFilterGenerateSales);
+            this.sidePanel14.Controls.Add(this.totalLabel);
+            this.sidePanel14.Controls.Add(this.btnGenerateAllSales);
+            this.sidePanel14.Controls.Add(this.labelControl2);
+            this.sidePanel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sidePanel14.Location = new System.Drawing.Point(0, 836);
+            this.sidePanel14.Name = "sidePanel14";
+            this.sidePanel14.Size = new System.Drawing.Size(669, 196);
+            this.sidePanel14.TabIndex = 66;
+            this.sidePanel14.Text = "sidePanel14";
+            // 
+            // cmbFilterGenerateSales
+            // 
+            this.cmbFilterGenerateSales.Location = new System.Drawing.Point(14, 14);
+            this.cmbFilterGenerateSales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbFilterGenerateSales.Name = "cmbFilterGenerateSales";
+            this.cmbFilterGenerateSales.Properties.AutoHeight = false;
+            this.cmbFilterGenerateSales.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbFilterGenerateSales.Properties.Items.AddRange(new object[] {
+            "All Sales",
+            "Daily Sales",
+            "Weekly Sales",
+            "Monthly Sales"});
+            this.cmbFilterGenerateSales.Size = new System.Drawing.Size(316, 40);
+            this.cmbFilterGenerateSales.TabIndex = 66;
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.totalLabel.Appearance.Options.UseFont = true;
+            this.totalLabel.Appearance.Options.UseForeColor = true;
+            this.totalLabel.Location = new System.Drawing.Point(519, 6);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(130, 23);
+            this.totalLabel.TabIndex = 65;
+            this.totalLabel.Text = "Total Amount";
+            // 
+            // btnGenerateAllSales
+            // 
+            this.btnGenerateAllSales.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(173)))), ((int)(((byte)(75)))));
+            this.btnGenerateAllSales.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateAllSales.Appearance.Options.UseBackColor = true;
+            this.btnGenerateAllSales.Appearance.Options.UseFont = true;
+            this.btnGenerateAllSales.Location = new System.Drawing.Point(14, 63);
+            this.btnGenerateAllSales.Name = "btnGenerateAllSales";
+            this.btnGenerateAllSales.Size = new System.Drawing.Size(157, 39);
+            this.btnGenerateAllSales.TabIndex = 63;
+            this.btnGenerateAllSales.Text = "Generate Sale Report";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(437, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(76, 23);
+            this.labelControl2.TabIndex = 64;
+            this.labelControl2.Text = "TOTAL: ";
+            // 
+            // sidePanel11
+            // 
+            this.sidePanel11.BorderThickness = 0;
+            this.sidePanel11.Controls.Add(this.gcProductList);
+            this.sidePanel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sidePanel11.Location = new System.Drawing.Point(0, 0);
+            this.sidePanel11.Name = "sidePanel11";
+            this.sidePanel11.Size = new System.Drawing.Size(669, 836);
+            this.sidePanel11.TabIndex = 63;
+            this.sidePanel11.Text = "sidePanel11";
+            // 
             // gcProductList
             // 
             this.gcProductList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -735,19 +748,6 @@
             this.Total.Visible = true;
             this.Total.VisibleIndex = 2;
             // 
-            // sidePanel12
-            // 
-            this.sidePanel12.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(101)))), ((int)(((byte)(33)))));
-            this.sidePanel12.Appearance.Options.UseBackColor = true;
-            this.sidePanel12.BorderThickness = 2;
-            this.sidePanel12.Controls.Add(this.filterLabel);
-            this.sidePanel12.Controls.Add(this.filterTotal);
-            this.sidePanel12.Location = new System.Drawing.Point(272, 27);
-            this.sidePanel12.Name = "sidePanel12";
-            this.sidePanel12.Size = new System.Drawing.Size(478, 79);
-            this.sidePanel12.TabIndex = 52;
-            this.sidePanel12.Text = "sidePanel12";
-            // 
             // SaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -771,7 +771,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             this.sidePanel10.ResumeLayout(false);
+            this.sidePanel12.ResumeLayout(false);
+            this.sidePanel12.PerformLayout();
             this.sidePanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).EndInit();
             this.sidePanel6.ResumeLayout(false);
             this.sidePanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBoxFilterSale.Properties)).EndInit();
@@ -779,12 +783,8 @@
             this.sidePanel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFilterGenerateSales.Properties)).EndInit();
             this.sidePanel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcProductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvProductList)).EndInit();
-            this.sidePanel12.ResumeLayout(false);
-            this.sidePanel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
