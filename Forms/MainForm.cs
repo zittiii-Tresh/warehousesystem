@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,9 +17,12 @@ namespace warehousesystem.Forms
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public MainForm()
+        public string _currentUser;
+        public MainForm(string currentUser)
         {
             InitializeComponent();
+            _currentUser = currentUser;
+     
         }
 
         private void exitBTN_Click(object sender, EventArgs e)
@@ -47,13 +51,25 @@ namespace warehousesystem.Forms
 
         private void cashierBTN_Click(object sender, EventArgs e)
         {
-            CashierForm cashierControl = new CashierForm();
+            CashierForm cashierControl = new CashierForm(_currentUser);
             cashierControl.Dock = DockStyle.Fill;
             cashierControl.Show();
-
-
         }
 
+        private void salesBTN_Click(object sender, EventArgs e)
+        {
+            mainPC.Controls.Clear();  // Clear existing controls
 
+            SaleForm saleControl = new SaleForm();
+            saleControl.Dock = DockStyle.Fill; // Ensure it fills the panel
+
+            // Optional: Force redraw (in case layout glitches)
+            saleControl.Margin = new Padding(0); // Optional: removes any margin
+            mainPC.Padding = new Padding(0);     // Optional: removes padding
+
+            mainPC.Controls.Add(saleControl);
+            mainPC.Invalidate();  // Force control to refresh
+            mainPC.Update();      // Apply changes immediately
+        }
     }
 }
