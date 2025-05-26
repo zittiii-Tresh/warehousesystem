@@ -30,6 +30,9 @@ namespace warehousesystem.Forms
         {
             lcOutOfStock.Text = GetStockCount("Out of Stock").ToString();
             lcLowStock.Text = GetStockCount("Low Stock").ToString();
+
+            ccBestSeller.Series["Series 1"].DataSource = BestSeller();
+            ccTotalSale.Series["Series 1"].DataSource = TotalSale();
         }
 
         private int GetStockCount(string stockStatus)
@@ -45,6 +48,40 @@ namespace warehousesystem.Forms
             }
         }
 
-       
+        public List<Model.BestProduct> BestSeller()
+        {
+            using (var connection = new SqlConnection(ConnectionString.ConnString))
+            {
+                connection.Open();
+
+                string query = @"SELECT TOP 3 
+                                    p.ProductID,  
+                                    p.ProductName,  
+                                    SUM(s.ProductQuantity) AS TotalQuantity,  
+                                    RANK() OVER(ORDER BY SUM(s.ProductQuantity) DESC) AS Rank
+                                 FROM dbo.Sale s
+                                 LEFT JOIN pro.Product p ON s.ProductID = p.ProductID
+                                 GROUP BY p.ProductID, p.ProductName
+                                 ORDER BY Rank;";
+
+                return connection.Query<Model.BestProduct>(query).ToList();
+            }
+        }
+
+        public List<Model.TotalSales> TotalSale()
+        {
+            using (var connection = new SqlConnection(ConnectionString.ConnString))
+            {
+                connection.Open();
+
+                string query = @"SELECT 
+                                    FORMAT(DatePurchased, 'MMMM') AS Month,
+                                    SUM(TotalAmount) AS TotalSale
+                                 FROM dbo.Sale
+                                 GROUP BY FORMAT(DatePurchased, 'MMMM')
+                                 ORDER BY Month;";
+                return connection.Query<Model.TotalSales>(query).ToList();
+            }
+        }
     }
 }

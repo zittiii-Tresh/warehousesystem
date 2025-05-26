@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.dateLabel = new DevExpress.XtraEditors.LabelControl();
@@ -48,10 +54,10 @@
             this.sidePanel10 = new DevExpress.XtraEditors.SidePanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.ccBestSeller = new DevExpress.XtraCharts.ChartControl();
             this.sidePanel16 = new DevExpress.XtraEditors.SidePanel();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.chartControl2 = new DevExpress.XtraCharts.ChartControl();
+            this.ccTotalSale = new DevExpress.XtraCharts.ChartControl();
             this.sidePanel19 = new DevExpress.XtraEditors.SidePanel();
             this.sidePanel17 = new DevExpress.XtraEditors.SidePanel();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -66,11 +72,17 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccBestSeller)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
             this.sidePanel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccTotalSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).BeginInit();
             this.sidePanel17.SuspendLayout();
             this.sidePanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -332,22 +344,32 @@
             // panelControl5
             // 
             this.panelControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl5.Controls.Add(this.chartControl1);
+            this.panelControl5.Controls.Add(this.ccBestSeller);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 65);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(356, 465);
             this.panelControl5.TabIndex = 87;
             // 
-            // chartControl1
+            // ccBestSeller
             // 
-            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Legend.LegendID = -1;
-            this.chartControl1.Location = new System.Drawing.Point(0, 0);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl1.Size = new System.Drawing.Size(356, 465);
-            this.chartControl1.TabIndex = 87;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.ccBestSeller.Diagram = xyDiagram1;
+            this.ccBestSeller.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ccBestSeller.Legend.LegendID = -1;
+            this.ccBestSeller.Location = new System.Drawing.Point(0, 0);
+            this.ccBestSeller.Name = "ccBestSeller";
+            series1.ArgumentDataMember = "ProductName";
+            series1.Name = "Series 1";
+            series1.SeriesID = 0;
+            series1.ValueDataMembersSerializable = "TotalQuantity";
+            sideBySideBarSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(80)))));
+            series1.View = sideBySideBarSeriesView1;
+            this.ccBestSeller.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.ccBestSeller.Size = new System.Drawing.Size(356, 465);
+            this.ccBestSeller.TabIndex = 87;
             // 
             // sidePanel16
             // 
@@ -362,7 +384,7 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.chartControl2);
+            this.panelControl3.Controls.Add(this.ccTotalSale);
             this.panelControl3.Controls.Add(this.sidePanel19);
             this.panelControl3.Controls.Add(this.sidePanel17);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -371,15 +393,25 @@
             this.panelControl3.Size = new System.Drawing.Size(834, 266);
             this.panelControl3.TabIndex = 95;
             // 
-            // chartControl2
+            // ccTotalSale
             // 
-            this.chartControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl2.Legend.LegendID = -1;
-            this.chartControl2.Location = new System.Drawing.Point(0, 50);
-            this.chartControl2.Name = "chartControl2";
-            this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
-            this.chartControl2.Size = new System.Drawing.Size(814, 216);
-            this.chartControl2.TabIndex = 100;
+            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
+            this.ccTotalSale.Diagram = xyDiagram2;
+            this.ccTotalSale.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ccTotalSale.Legend.LegendID = -1;
+            this.ccTotalSale.Location = new System.Drawing.Point(0, 50);
+            this.ccTotalSale.Name = "ccTotalSale";
+            series2.ArgumentDataMember = "Month";
+            series2.Name = "Series 1";
+            series2.SeriesID = 0;
+            series2.ValueDataMembersSerializable = "TotalSale";
+            lineSeriesView1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(176)))), ((int)(((byte)(80)))));
+            series2.View = lineSeriesView1;
+            this.ccTotalSale.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.ccTotalSale.Size = new System.Drawing.Size(814, 216);
+            this.ccTotalSale.TabIndex = 100;
             // 
             // sidePanel19
             // 
@@ -499,12 +531,18 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccBestSeller)).EndInit();
             this.sidePanel16.ResumeLayout(false);
             this.sidePanel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(lineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ccTotalSale)).EndInit();
             this.sidePanel17.ResumeLayout(false);
             this.sidePanel17.PerformLayout();
             this.sidePanel13.ResumeLayout(false);
@@ -544,10 +582,10 @@
         private DevExpress.XtraEditors.SidePanel sidePanel11;
         private DevExpress.XtraEditors.SidePanel sidePanel14;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private DevExpress.XtraCharts.ChartControl ccBestSeller;
         private DevExpress.XtraEditors.SidePanel sidePanel19;
         private DevExpress.XtraEditors.SidePanel sidePanel17;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraCharts.ChartControl chartControl2;
+        private DevExpress.XtraCharts.ChartControl ccTotalSale;
     }
 }

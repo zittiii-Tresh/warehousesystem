@@ -15,16 +15,19 @@ namespace warehousesystem.Model
         public class AisleLocation
         {
             public string Aisle { get; set; }
+            public string Availability { get; set; }
         }
 
         public class ContainerLocation
         {
             public string Container { get; set; }
+            public string Availability { get; set; }
         }
 
         public class ShelfLocation
         {
             public string Shelf { get; set; }
+            public string Availability { get; set; }
         }
     }
 }
